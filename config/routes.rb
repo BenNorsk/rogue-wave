@@ -3,4 +3,16 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root to: "pages#home"
+
+  # routes created following the spec laid out in https://shorturl.at/chpV6
+  resources :boats, only: %i[index show] do
+    resources :bookings, only: %i[new create]
+  end
+
+  resources :bookings, only: %i[show]
+
+  namespace :user do
+    resources :boats
+    resources :bookings, only: %i[index destroy]
+  end
 end
