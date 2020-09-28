@@ -1,24 +1,57 @@
 require 'faker'
 require 'betterlorem'
 
-puts 'Deleting all records'
+# Remove all current entries in the DB
+puts '---> Destroying all DB entries"'
+User.destroy_all
+Address.destroy_all
+Boat.destroy_all
 
-puts 'done'
 
-Address.create(city: 'oslo')
-  address = Address.last.id
+puts '---> Generating 10 fake users"'
+users = []
+10.times do
+  users << User.create(
+    first_name: Faker::Name.first_name  ,
+    last_name: Faker::Name.last_name ,
+    email: Faker::Internet.email,
+    password: 'topsecret')
+  end
 
-User.create(first_name: 'Ben', last_name: 'Reddik', email: 'ben@me.com', password: 'topsecret', address_id: address)
-  user = User.last.id
-
-50.times do
-  Boat.create(
-    name: Faker::Name.name,
-    description: BetterLorem.p(1, true),
-    price_per_day: Faker::Number.within(range: 1000..2000),
-    user_id: user,
-    address_id: address
-  )
+# Functions to generate some random GPS coordinates in the oslo fjord
+# lat 59.74 -> 59.94
+# long 10.46 -> 10.81
+# Generate a random latitude in the Oslo area
+def lat_range (min, max)
+  rand * (max-min) + min
+end
+# Generate a random longditude in the Oslo area
+def long_range (min, max)
+  rand * (max-min) + min
 end
 
-p Boat.all
+puts '---> Generating 10 fake boats"'
+i = 0
+while (i < 10)
+  i.even? ? j = 2 : j = 1
+  j.times do
+    new_address = Address.create(
+      city: "Oslo",
+      street_address: Faker::Address.street_address,
+      country: "Norway",
+      lat: lat_range(59.74, 59.94),
+      long: long_range(10.46, 10.81)
+    )
+
+    Boat.create(
+      name: Faker::Name.name,
+      description: BetterLorem.p(1, true),
+      price_per_day: Faker::Number.within(range: 500..2000),
+      user_id: users[i].id,
+      address_id: new_address.id
+    )
+  end
+  i += 1
+end
+
+puts "---> Sucessfully created #{Boat.all.length} boats, allocated to #{User.all.length} users."

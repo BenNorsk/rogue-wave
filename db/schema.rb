@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2020_09_28_143839) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "address_id", null: false
+    t.bigint "address_id"
     t.string "first_name"
     t.string "last_name"
     t.index ["address_id"], name: "index_users_on_address_id"

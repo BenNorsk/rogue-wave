@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :boats, dependent: :destroy
 
    # this assumes that there is a 1:1 relationship between the boat and the address
-  belongs_to :address, dependent: :destroy
+  belongs_to :address, optional: true, dependent: :destroy
 
   # each user must have a first and last name (email and password verified by devise)
   validates :first_name, presence: true
