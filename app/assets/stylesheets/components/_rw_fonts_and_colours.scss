@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Roboto:wght@100;400;700&display=swap');
+
+// Here are the colours for Rogue Wave.
+$rw-dark: #24282B;
+$rw-medium: #4E6059;
+$rw-light: #95A19D;
+
+.rw-light-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+.rw-medium-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.rw-bold-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.rw-title-text {
+  font-family: font-family: 'Annie Use Your Telescope', cursive;
+}
+
+.rw-bg-light {
+  background-color: $rw-light;
+}
+
+.rw-bg-medium {
+  background-color: $rw-medium;
+}
+
+.rw-bg-dark {
+  background-color: $rw-dark;
+}
+
+.rw-border-light {
+  border-color: $rw-light;
+}
+
+.rw-border-medium {
+  border-color: $rw-medium;
+}
+
+.rw-border-dark {
+  border-color: $rw-border-dark;
+}
+
+.rw-text-color-light {
+  color: $rw-light;
+}
+
+.rw-text-color-medium {
+  color: $rw-medium
+}
+
+.rw-text-color-dark {
+  color: $rw-dark;
+}
+
+
+
+
+
+
+
