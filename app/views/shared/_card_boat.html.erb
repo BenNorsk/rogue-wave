@@ -1,0 +1,20 @@
+<div class="boat-card-first-layer">
+  <div class="boat-card-left-layer-img"></div>
+  <div class="boat-card-second-layer-right">
+    <div class="boat-card-third-layer-top">
+      <div>
+        <h1 class="rw-text-color-dark rw-text-bold"> <%= element.name %> </h1>
+        <br>
+        <p class="rw-text-color-dark rw-text-medium"> <%= element.description %></p>
+      </div>
+      <i class="far fa-heart"></i>
+    </div>
+    <div class="boat-card-third-layer-bottom">
+      <div class="boat-card-fourth-layer-review">
+        <i class="fas fa-star"></i>
+        <p class="rw-text-color-dark rw-text-medium"> <%= ((rand() * 5).round(2).to_s) %></p>
+      </div>
+      <h4 class="rw-text-bold rw-text-color-dark">$ <%= element.price %> / day</h4>
+    </div>
+  </div>
+</div>
