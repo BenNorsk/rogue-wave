@@ -1,0 +1,49 @@
+.boat-card-first-layer {
+  border-radius: 2px;
+  box-shadow: 4px 4px 12px black;
+  width: 480px;
+  height: 160px;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  background-color: white;
+  transition: all .2s ease-in-out;
+}
+
+.boat-card-left-layer-img {
+  width: 30%;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.boat-card-third-layer-top {
+  display: flex;
+  justify-content: space-between;
+  height: 110px;
+}
+
+.heart {
+  padding-top: 6px;
+}
+
+.boat-card-third-layer-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.star {
+  display: flex;
+  justify-content: space-between;
+}
+
+.star-icon {
+  margin-top: 2px;
+  margin-right: 8px;
+}
+
+.boat-card-first-layer:hover {
+  transform: scale(1.05);
+  background-color: rgba(100,160,100,0.07);
+}
+
+

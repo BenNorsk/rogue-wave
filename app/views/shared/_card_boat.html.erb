@@ -1,20 +1,25 @@
+<!-- in order to render the boat-card, you must use the following render tag -->
+<!-- (render "shared/card_boat", element: @boat) -->
+<!-- Then, go ahead and remove the current placeholders. -->
+
 <div class="boat-card-first-layer">
-  <div class="boat-card-left-layer-img"></div>
+  <div class="boat-card-left-layer-img rw-bg-light"></div>
   <div class="boat-card-second-layer-right">
     <div class="boat-card-third-layer-top">
       <div>
-        <h1 class="rw-text-color-dark rw-text-bold"> <%= element.name %> </h1>
-        <br>
-        <p class="rw-text-color-dark rw-text-medium"> <%= element.description %></p>
+        <h4 class="rw-text-color-dark rw-text-bold"> Boat Name <%=  "element.name" %> </h4>
+        <p class="rw-text-color-medium rw-text-light"> This is a lovely boat. <%= "element.description" %></p>
       </div>
-      <i class="far fa-heart"></i>
+      <i class="far fa-heart heart"></i>
     </div>
     <div class="boat-card-third-layer-bottom">
       <div class="boat-card-fourth-layer-review">
-        <i class="fas fa-star"></i>
-        <p class="rw-text-color-dark rw-text-medium"> <%= ((rand() * 5).round(2).to_s) %></p>
+        <div class="star rw-text-color-dark">
+          <i class="fas fa-star rw-text-color-dark star-icon "></i>
+          <p class="rw-text-color-dark rw-text-medium ">  <%= ((rand() * 5).round(2).to_s) %></p>
+        </div>
       </div>
-      <h4 class="rw-text-bold rw-text-color-dark">$ <%= element.price %> / day</h4>
+      <p class="rw-text-bold rw-text-color-dark">$ 1500 <%= "element.price" %> / day</p>
     </div>
   </div>
 </div>
