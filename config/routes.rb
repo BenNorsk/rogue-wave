@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
+  get "/playground", to: "pages#playground"
+
   # routes created following the spec laid out in https://shorturl.at/chpV6
   resources :boats, only: %i[index show] do
     resources :bookings, only: %i[new create]
