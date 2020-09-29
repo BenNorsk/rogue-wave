@@ -8,7 +8,6 @@ class BoatsController < ApplicationController
       @boats = Boat.global_search(@query)
     end
   end
-end
 
   # def search
   #   # This will search for any complete word within the boat or address field - currently partial maches are not supported.
@@ -31,3 +30,6 @@ end
   #   end
   #   additional_boats
   # end
+  def update
+  end
+end
