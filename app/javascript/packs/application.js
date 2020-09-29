@@ -11,6 +11,14 @@ require("channels")
 
 import 'bootstrap';
 import 'dropzone';
+import 'mapbox-gl/dist/mapbox-gl.css';
+
+import { initMapbox, boatSelected } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+  boatSelected();
+})
 
 console.log(">>> application js loaded")
 
