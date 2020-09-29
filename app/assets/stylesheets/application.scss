@@ -7,6 +7,8 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "dropzone/dist/min/dropzone.min";
+@import "dropzone/dist/min/basic.min";
 //
 // Your CSS partials
 @import "components/index";
@@ -15,3 +17,4 @@
 @import "components/card_boat";
 @import "components/rw_fonts_and_colours";
 @import "components/banner"
+

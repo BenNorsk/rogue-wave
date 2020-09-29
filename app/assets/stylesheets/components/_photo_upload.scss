@@ -1,0 +1,34 @@
+// Dropzone Styling
+.dropzone {
+  padding: 20px;
+  border: 2px dashed $rw-light  !important;
+  border-radius: 8px !important;
+  background-color: rgb(189, 189, 189) !important;
+  color: $rw-dark !important;
+  text-align: center !important;
+
+  &:dz-drag-hover {
+    border: 2px dashed $rw-light !important;
+    border-radius: 8px !important;
+    background-color: rgb(131, 131, 131) !important;
+    color: $rw-dark !important;
+
+    .dz-message {
+      opacity: 0.9 !important;
+    }
+  }
+}
+
+.dz-image-preview {
+  background-color: transparent  !important;
+}
+a.dz-remove {
+  color: white !important;
+}
+
+.dz-error-message {
+  color: white !important;
+}
+.dropzone .dz-preview .dz-error-message {
+  color: white  !important;
+}
