@@ -1,0 +1,20 @@
+<!-- to push to heroku, the API key must be added! -->
+<!-- Steps to do in order to use the map: -->
+<!-- (render "shared/map", elements: @boats) -->
+<!-- You must wrap it into a div, and give the div a height & width, otherwise it doesn't work! -->
+<% markers = [] %>
+<% elements.each do |b| %>
+  <% marker = { %>
+  <% lat: b.address.lat, %>
+  <% lng: b.address.long %>
+  <% } %>
+  <% markers << marker %>
+<% end %>
+
+
+<div id="map" style="height: 100%; width: 100%;"
+     data-markers="<%= markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+
