@@ -32,14 +32,14 @@ const initMapbox = () => {
 
 };
 
-const boatSelected = (boatClass) => {
-  boats = document.querySelectorAll(`.${boatClass}`);
-  boats.addEventListener("click", (element) => {
-    boat = event.currentTarget;
-    markers = [{lat: boat.address.lat, lng: boat.address.lng}]
-    initMapbox()
-  });
-}
+// const boatSelected = (boatClass) => {
+//   const boats = document.querySelectorAll(`.${boatClass}`);
+//   boats.addEventListener("click", (element) => {
+//     boat = event.currentTarget;
+//     markers = [{lat: boat.address.lat, lng: boat.address.lng}]
+//     initMapbox()
+//   });
+// }
 
 
 
@@ -73,5 +73,5 @@ const addMarkersToMap = (map, markers) => {
 
 
 
-export { initMapbox, boatSelected };
+// export { initMapbox, boatSelected };
 
