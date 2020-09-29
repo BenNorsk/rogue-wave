@@ -9,11 +9,11 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-import 'bootstrap';
-import 'dropzone';
+// import 'bootstrap';
+// import 'dropzone';
 
 
-// JS for Maps
+// // JS for Maps
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox, boatSelected } from '../plugins/init_mapbox';
 document.addEventListener('turbolinks:load', () => {
