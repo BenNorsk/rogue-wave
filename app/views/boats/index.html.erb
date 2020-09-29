@@ -1,5 +1,38 @@
-  <ul>
-<% @boats.each do |boat| %>
-    <li><%= boat.name %></li>
-<% end  %>
- </ul>
+<div class="container justify-space-between">
+  <div class="col-12 col-lg-6">
+    <div class="row">
+      <div class="col-6">
+
+      </div>
+      <div class="col-6">
+        <%= image_tag "placeholder_map.png", class: "map-size" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-6">
+  <% @boats.each do |boat|  %>
+    <div class="boat-card-first-layer">
+      <div class="boat-card-left-layer-img" style="background-image: url(https://source.unsplash.com/200x150/?sailboat);">
+      </div>
+      <div class="boat-card-second-layer-right">
+        <div class="boat-card-third-layer-top">
+          <div>
+            <h4 class="rw-text-color-dark rw-text-bold"> Boat Name <%=  boat.name %> </h4>
+            <p class="rw-text-color-medium rw-text-light"> This is a lovely boat. <%= truncate(boat.description, :length => 80)  %></p>
+          </div>
+            <i class="far fa-heart heart"></i>
+        </div>
+          <div class="boat-card-third-layer-bottom">
+            <div class="boat-card-fourth-layer-review">
+              <div class="star rw-text-color-dark">
+                <i class="fas fa-star rw-text-color-dark star-icon "></i>
+                <p class="rw-text-color-dark rw-text-medium ">  <%= ((rand() * 5).round(2).to_s) %></p>
+              </div>
+            </div>
+                <p class="rw-text-bold rw-text-color-dark">$<%= boat.price_per_day %> / day</p>
+          </div>
+        </div>
+    </div>
+  <% end %>
+  </div>
+</div>

@@ -1,19 +1,21 @@
 .boat-card-first-layer {
   border-radius: 2px;
   box-shadow: 4px 4px 12px black;
-  width: 480px;
+  width: 580px;
   height: 160px;
   display: flex;
   padding: 10px;
+  margin-bottom: 20px;
   justify-content: space-between;
   background-color: white;
   transition: all .2s ease-in-out;
 }
 
 .boat-card-left-layer-img {
-  width: 30%;
+  width: 50%;
   height: 100%;
   margin-right: 10px;
+  background-size: cover;
 }
 
 .boat-card-third-layer-top {
