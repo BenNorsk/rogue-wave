@@ -1,17 +1,18 @@
-<div class="container justify-space-between">
-  <div class="col-12 col-lg-6">
-    <div class="row">
-      <div class="col-6">
 
-      </div>
-      <div class="col-6">
-        <%= image_tag "placeholder_map.png", class: "map-size" %>
-      </div>
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-6">
+      <!-- map and filters here      -->
+    <%= image_tag "placeholder_map.png", class: "map-size" %>
     </div>
-  </div>
-  <div class="col-12 col-lg-6">
-  <% @boats.each do |boat|  %>
-    <div class="boat-card-first-layer">
+    <div class="col-6">
+      <div class="row">
+        <!-- for each boat       -->
+        <% @boats.each do |boat|  %>
+        <div class="col-12">
+          <!-- boat card here      -->
+        <div class="boat-card-first-layer">
       <div class="boat-card-left-layer-img" style="background-image: url(https://source.unsplash.com/200x150/?sailboat);">
       </div>
       <div class="boat-card-second-layer-right">
@@ -33,6 +34,9 @@
           </div>
         </div>
     </div>
-  <% end %>
+        </div>
+        <% end  %>
+      </div>
+    </div>
   </div>
 </div>
