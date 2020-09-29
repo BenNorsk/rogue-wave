@@ -10,10 +10,10 @@
     <ul class="navbar-nav mr-auto align-items-center">
       <% if user_signed_in?  %>
         <li class="nav-item">
-          <%= link_to "My rentals", new_user_session_path, method: :get, class: "rw-navbar-button rw-text-color-light rw-navbar-links" %>
+          <%= link_to "My rentals", boat_bookings_path, method: :get, class: "rw-navbar-button rw-text-color-light rw-navbar-links" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My boat offers", new_user_session_path, method: :get, class: "rw-navbar-button rw-text-color-light rw-navbar-links" %>
+          <%= link_to "My boat offers", boat_path, method: :get, class: "rw-navbar-button rw-text-color-light rw-navbar-links" %>
         </li>
         <li class="nav-item">
           <%= link_to "Sign out", new_user_session_path, method: :get, class: "rw-text-color-light rw-navbar-links" %>
