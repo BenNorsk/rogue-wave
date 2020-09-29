@@ -23,11 +23,13 @@ users = []
 # long 10.46 -> 10.81
 # Generate a random latitude in the Oslo area
 def lat_range (min, max)
-  rand * (max-min) + min
+  lat = rand(0..(max - min)) + min
+  lat
 end
 # Generate a random longditude in the Oslo area
 def long_range (min, max)
-  rand * (max-min) + min
+  long = rand(0..(max - min)) + min
+  long
 end
 
 puts '---> Generating 10 fake boats"'
