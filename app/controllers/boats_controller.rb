@@ -5,6 +5,8 @@ class BoatsController < ApplicationController
     search
   end
 
+  def update
+  end
     private
 
   def search
@@ -28,4 +30,6 @@ class BoatsController < ApplicationController
     end
     additional_boats
   end
+
+
 end

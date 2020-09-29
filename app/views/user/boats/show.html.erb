@@ -1,0 +1,18 @@
+<h2>
+  <%= @boat.name %>
+</h2>
+<p>
+  <%= @boat.description %>
+</p>
+
+<% image_url = @boat.photos.attached? ? cloudinary_url(@boat.photos[0].key) : "" %>
+
+<% @boat.photos.each do |photo| %>
+  <%= image_tag(cloudinary_url(photo.key), size: "100x100") %>
+<% end %>
+
+
+
+<%= render '/shared/edit_boat', boat: @boat %>
+
+<%= render '/shared/drag_and_drop_upload' %>

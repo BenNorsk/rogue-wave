@@ -1,0 +1,21 @@
+<!-- Namespacing requires you to pass the symbol :user before the model to be routed to the user/boat controller -->
+
+<%= form_with(model: [:user, @boat], local: true, multipart: true) do |form| %>
+
+<div class="mb-6 text-light bg-dark">
+    <!-- <%= form.label :photo, class: "label" %> -->
+    <div class="dropzone dropzone-default dz-clickable" data-controller="dropzone" data-dropzone-max-file-size="2" data-dropzone-max-files="2">
+    <%= form.file_field :photos, mulitple: true, direct_upload: true, data: { target: 'dropzone.input' }  %>
+      <div class="dropzone-msg dz-message needsclick ">
+        <h3 class="dropzone-msg-title">Drag here to upload or click here to browse</h3>
+        <span class="dropzone-msg-desc text-sm">2 MB file size maximum. Allowed file types png, jpg.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="mb-6">
+    <%= form.submit "Create/Update", class: "btn btn-outline-secondary my-2" %>
+  </div>
+
+<% end %>
