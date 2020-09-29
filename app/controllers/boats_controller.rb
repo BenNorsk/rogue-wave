@@ -1,11 +1,13 @@
 class BoatsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index search]
+
   def index
     @boats = Boats.all
   end
 
   def search
+    # This will search for any complete word within the boat or address field - currently partial maches are not supported.
     search_term = params["query"]
-    search_term.capitalize! if search_term.class == String
     @boats = Boat.search_by_boat(search_term)
     @boats += search_after_address(search_term)
     @boats = @boats.uniq

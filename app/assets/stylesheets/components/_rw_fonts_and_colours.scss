@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Roboto:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 
 // Here are the colours for Rogue Wave.
 $rw-dark: #24282B;
@@ -22,6 +23,10 @@ $rw-light: #95A19D;
 
 .rw-title-text {
   font-family: 'Annie Use Your Telescope', cursive;
+}
+
+.rw-logo-text {
+  font-family: 'Rock Salt', cursive;
 }
 
 .rw-bg-light {
