@@ -11,8 +11,6 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
 
-  get "/search/:query", to: "boats#search"
-
   resources :bookings, only: %i[show]
 
   namespace :user do
