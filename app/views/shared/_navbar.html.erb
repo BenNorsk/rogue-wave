@@ -1,0 +1,19 @@
+<div class="navbar navbar-expand-sm navbar-dark navbar-lewagon sticky-top align-items-center rw-bg-dark">
+  <%= link_to "Rogue Wave", root_path, class: "rw-title-text rw-title"%>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse justify-space-between pt-3" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto align-items-center">
+        <li class="nav-item rw-light-text">
+          <%= link_to "Sign up", user_session_path, class: "rw-text-color-light rw-navbar-links" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign in", new_user_session_path, method: :delete, class: "rw-navbar-button rw-text-color-light rw-navbar-links" %>
+        </li>
+    </ul>
+  </div>
+</div>
