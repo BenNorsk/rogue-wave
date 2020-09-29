@@ -8,12 +8,24 @@
 
   <div class="collapse navbar-collapse justify-space-between pt-3" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto align-items-center">
-        <li class="nav-item rw-light-text">
+      <% if user_signed_in?  %>
+        <li class="nav-item">
+          <%= link_to "My rentals", new_user_session_path, method: :get, class: "rw-navbar-button rw-text-color-light rw-navbar-links" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My boat offers", new_user_session_path, method: :get, class: "rw-navbar-button rw-text-color-light rw-navbar-links" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign out", new_user_session_path, method: :get, class: "rw-text-color-light rw-navbar-links" %>
+        </li>
+        <% else %>
+       <li class="nav-item rw-light-text">
           <%= link_to "Sign up", user_session_path, class: "rw-text-color-light rw-navbar-links" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sign in", new_user_session_path, method: :delete, class: "rw-navbar-button rw-text-color-light rw-navbar-links" %>
+          <%= link_to "Sign in", new_user_session_path, method: :get, class: "rw-navbar-button rw-text-color-light rw-navbar-links" %>
         </li>
+        <% end %>
     </ul>
   </div>
 </div>
