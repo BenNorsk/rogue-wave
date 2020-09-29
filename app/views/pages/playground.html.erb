@@ -1,4 +1,11 @@
 <%= render "shared/card_boat" %>
 
 
+<% if user_signed_in? %>
+  <%= link_to "logout", destroy_user_session_path, method: :delete, class: "btn btn-secondary" %>
+  <%= "Welcome #{current_user.first_name.titlecase} #{current_user.last_name.titlecase}" %>
+<% end %>
+
+<%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+
 
