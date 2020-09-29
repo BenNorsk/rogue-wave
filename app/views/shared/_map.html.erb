@@ -1,0 +1,17 @@
+<!-- to push to heroku, the API key must be added! -->
+<!-- (render "shared/map", elements: @boats) -->
+<% markers = [] %>
+<% elements.each do |b| %>
+  <% marker = { %>
+  <% lat: b.address.lat, %>
+  <% lng: b.address.long %>
+  <% } %>
+  <% markers << marker %>
+<% end %>
+<%= markers %>
+
+
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
