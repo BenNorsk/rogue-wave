@@ -11,18 +11,21 @@ require("channels")
 
 import 'bootstrap';
 import 'dropzone';
+
+
+// JS for Maps
 import 'mapbox-gl/dist/mapbox-gl.css';
-
 import { initMapbox, boatSelected } from '../plugins/init_mapbox';
-
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   boatSelected();
 })
 
+// Import stimulus controllers
+import 'controllers';
+
 console.log(">>> application js loaded")
 
-import 'controllers';
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
