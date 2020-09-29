@@ -2,7 +2,7 @@ class BoatsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index search]
 
   def index
-    @boats = Boats.all
+    @boats = Boat.all
   end
 
   def search
