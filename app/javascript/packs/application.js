@@ -11,10 +11,13 @@ require("channels")
 import 'bootstrap';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-import { initMapbox } from '../plugins/init_mapbox';
+import { initMapbox, boatSelected } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
+  const mapElement = document.getElementById('map');
+  let markers = JSON.parse(mapElement.dataset.markers);
   initMapbox();
+  boatSelected();
 })
 
 

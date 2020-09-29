@@ -10,6 +10,7 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
+
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
@@ -18,8 +19,9 @@ const initMapbox = () => {
       // That is the access token to this map
       //pk.eyJ1IjoiYmVubm9yc2siLCJhIjoiY2tmNmpnZzZvMHRmNTMwcWR1NnVocnZmdCJ9.H1zfqOnfwYWPFKh5yA3eXA
     });
-     //const markers = JSON.parse(mapElement.dataset.markers);
-     const markers = [{lat: 50.0, lng: 0.0}]
+    // here the markers defintion used to be
+    const markers = JSON.parse(mapElement.dataset.markers);
+     console.log(markers)
     markers.forEach((marker) => {
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
@@ -29,6 +31,15 @@ const initMapbox = () => {
   }
 
 };
+
+const boatSelected = (boatClass) => {
+  boats = document.querySelectorAll(`.${boatClass}`);
+  boats.addEventListener("click", (element) => {
+    boat = event.currentTarget;
+    markers = [{lat: boat.address.lat, lng: boat.address.lng}]
+    initMapbox()
+  });
+}
 
 
 
@@ -62,5 +73,5 @@ const addMarkersToMap = (map, markers) => {
 
 
 
-export { initMapbox };
+export { initMapbox, boatSelected };
 
