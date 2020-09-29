@@ -1,4 +1,6 @@
 class Boat < ApplicationRecord
+  include PgSearch::Model
+  pg_search_scope :search_by_boat, against: [:description, :name, :price_per_day]
   belongs_to :user
   has_many :bookings, dependent: :destroy
 

@@ -34,6 +34,9 @@ gem 'simple_form'
 gem 'faker'
 gem 'betterlorem'
 
+# This is for the search queries
+gem 'pg_search'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
