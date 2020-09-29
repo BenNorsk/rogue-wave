@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="rw-banner-text-size"><strong><p>Rent out suited boat for your adventure</p></strong> </h1>
         <%= simple_form_for("", method: :get, url: boats_path) do |f| %>
-        <%= f.input :search_term, label: false, :input_html => { :class => 'rw-search_field' }, placeholder: 'Search..' %>
+        <%= f.input :query, label: false, :input_html => { :class => 'rw-search_field' }, placeholder: 'Search..' %>
         <%= f.submit :style => "display: none;" %>
         <% end %>
   </div>
