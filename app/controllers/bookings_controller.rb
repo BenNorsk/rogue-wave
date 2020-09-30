@@ -8,8 +8,8 @@ class BookingsController < ApplicationController
 
       if @booking.save
         flash[:alert] = "Booking request sent"
-        # redirect_to user_bookings_path
-        redirect_to boat_path(@booking.boat)
+        redirect_to user_bookings_path
+        # redirect_to boat_path(@booking.boat)
       else
         redirect_to boat_path(@booking.boat)
       end
