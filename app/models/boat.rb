@@ -11,10 +11,9 @@ class Boat < ApplicationRecord
   has_many_attached :photos
 
   include PgSearch::Model
-  pg_search_scope :global_search, against: [:name],
-    associated_against: {
-      address: [:city, :country, :lat, :long, :street_address]
-    }, using: {
+  pg_search_scope :global_search, against: %i[name], associated_against:
+  { address: %i[city country lat long street_address] }, using:
+  {
     tsearch: { prefix: true }
   }
 end
