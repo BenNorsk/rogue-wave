@@ -1,0 +1,26 @@
+<% booking = element %>
+<div class="my-bookings-container">
+  <div class="first-layer-booking-card">
+    <div class="second-layer-booking-card-left">
+      <%= image_tag("download.jpg", class: "boat-img")  %>
+    </div>
+    <div class=second-layer-booking-card-right>
+      <h4 class="rw-text-color-dark rw-light-text"><%= Boat.find(booking.boat_id).name %></h4>
+      <div>
+        <% sd = booking.start_date %>
+        <% ed = booking.end_date %>
+          <p class="rw-text-color-dark"><%= "#{sd.day}.#{sd.month} from #{sd.hour} o'clock - #{ed.day}.#{ed.month}.#{ed.year} until #{ed.hour} o'clock." %></p>
+      </div>
+      <p class="rw-text-color-dark"><%= "#{Boat.find(booking.boat_id).address.street_address}, #{Boat.find(booking.boat_id).address.city}" %></p>
+      <div class="third-layer-booking-card-bottom">
+        <h6 class="rw-bold-text p-1 rw-text-color-medium">$ <%= Boat.find(booking.boat_id).price_per_day  %></h6>
+
+        <div class="confirmed-booking rounded rw-bg-dark">
+          <p class="rw-text-color-light rw-medium-text mr-1">confirmed</p>
+          <i class="fas fa-check rw-text-color-light mt-1"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
