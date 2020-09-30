@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get "/playground", to: "pages#playground"
+  get "/image_carolsel", to: "pages#image_carolsel"
 
   # routes created following the spec laid out in https://shorturl.at/chpV6
   resources :boats, only: %i[index show] do
