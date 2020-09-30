@@ -14,6 +14,14 @@ html {
   display: block;
 }
 
+.boats-container {
+  min-height: 100vh;
+}
+
+.all-boats {
+  margin: 0 auto;
+}
+
 .user-boat-list {
   display: grid;
   grid-template-columns: 1fr;

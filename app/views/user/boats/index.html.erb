@@ -1,8 +1,8 @@
 <section class="hover">
   <%= render "shared/title_wave", element: "#{@user.first_name}'s Boats" %>
-  <div class="container">
+  <div class="boats-container">
     <div class="row">
-      <div class="col-6 py-0">
+      <div class="col-6 py-0 all-boats">
         <div class="user-boat-list">
           <% @user.boats.each do |boat| %>
             <% select = boat == @selected_boat ? "selected-card" : ""  %>
@@ -12,18 +12,16 @@
           <% end %>
         </div>
       </div>
-      <div class="col-6">
+      <!-- <div class="col-6">
         <div class="user-boat-images">
           <% if !@selected_boat.nil? %>
             <% @selected_boat.photos.each do |photo| %>
               <%= render 'boat_image_card', photo: photo %>
             <% end %>
           <% end %>
-        </div>
-        <div class="user-boat-location">
-        </div>
+        </div> -->
+        <!-- <div class="user-boat-location">
+        </div> -->
       </div>
     </div>
-  </div>
-  </div>
 </section>
