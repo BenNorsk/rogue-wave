@@ -1,6 +1,6 @@
 .boat-card-first-layer {
   border-radius: 2px;
-  box-shadow: 4px 4px 12px black;
+  box-shadow: 4px 4px 12px rgba(black, .08);
   display: flex;
   padding: 10px;
   margin-bottom: 20px;
@@ -10,16 +10,15 @@
 }
 
 .boat-card-left-layer-img {
-  width: 50%;
+  width: 150px;
   height: 100%;
   margin-right: 10px;
-  background-size: cover;
+  object-fit:cover;
 }
 
 .boat-card-third-layer-top {
   display: flex;
   justify-content: space-between;
-  height: 110px;
 }
 
 .heart {
