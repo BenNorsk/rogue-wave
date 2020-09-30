@@ -16,6 +16,13 @@ class BoatsController < ApplicationController
 
   def show
     @boat = Boat.find(params["id"])
+
+    @markers = [@boat].map do |boat|
+      {
+        lat: boat.address.lat,
+        lng: boat.address.long
+      }
+    end
   end
 
 
