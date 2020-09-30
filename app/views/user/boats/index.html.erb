@@ -1,5 +1,28 @@
-<ul>
-<% @user.boats.each do |boat| %>
-  <li><%= boat.name  %></li>
-<% end %>
-</ul>
+<div class="container">
+  <h2 class="py-4">Welcome <span style="color: #E67E22"><%= "#{@user.first_name} #{@user.last_name}" %></span> to your boats page</h2>
+  <p>Below is a list of your current boat offer, click on a boat to see the uploaded images and location details</p>
+  <div class="row">
+    <div class="col-6 py-0">
+      <div class="user-boat-list">
+        <% @user.boats.each do |boat| %>
+          <% select = boat == @selected_boat ? "selected-card" : ""  %>
+          <div class="user-boat-card position-relative <%= select %>">
+            <%= render 'user_boat_card', boat: boat %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="user-boat-images">
+        <% if !@selected_boat.nil? %>
+          <% @selected_boat.photos.each do |photo| %>
+            <%= render 'boat_image_card', photo: photo %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="user-boat-location">
+      </div>
+    </div>
+  </div>
+</div>
+</div>

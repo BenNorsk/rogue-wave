@@ -1,5 +1,6 @@
 require 'faker'
 require 'betterlorem'
+require 'date'
 
 # Remove all current entries in the DB
 puts '---> Destroying all DB entries"'
@@ -57,3 +58,34 @@ while (i < 10)
 end
 
 puts "---> Sucessfully created #{Boat.all.length} boats, allocated to #{User.all.length} users."
+
+
+
+puts 'Generating 3 bookings per user.'
+bookings = []
+date_today = Date.new(2020, 10, 1)
+users.each do |user|
+  3.times do
+    date_start = Date.new(date_today.year, date_today.month, (date_today.day + (14 * rand).to_i))
+    date_end = Date.new(date_start.year, date_start.month, (date_start.day + (5 * rand).to_i))
+    Booking.create( { start_date: date_start, end_date: date_end, user_id: user.id, boat_id: Boat.all.sample.id } )
+  end
+end
+
+puts "---> Successfully created 3 bookings per user, 30 in total."
+
+# create_table "bookings", force: :cascade do |t|
+#     t.datetime "start_date"
+#     t.datetime "end_date"
+#     t.datetime "created_at", precision: 6, null: false
+#     t.datetime "updated_at", precision: 6, null: false
+#     t.bigint "user_id", null: false
+#     t.bigint "boat_id", null: false
+#     t.index ["boat_id"], name: "index_bookings_on_boat_id"
+#     t.index ["user_id"], name: "index_bookings_on_user_id"
+#   end
+
+
+
+
+

@@ -33,5 +33,6 @@
 /node_modules
 /yarn-error.log
 yarn-debug.log*
+/node_modules/.yarn-integrity
 .yarn-integrity
 .env

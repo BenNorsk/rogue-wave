@@ -1,0 +1,40 @@
+<div class="container my-4">
+  <div class="row">
+    <div class="col-4">
+      <div class="row">
+        <!-- Insert boat image carolsel here -->
+        <% if !@boat.photos[0].nil? %>
+          <%= image_tag(@boat.photos[0], class: "boat-image-show") %>
+        <% end %>
+      </div>
+      <div class="row">
+        <h5 class="pt-3">location...</h5>
+        <div class="boat-map-show">
+          <%= render "shared/map", markers: @markers %>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="row">
+        <div class="col">
+          <h2><%= @boat.name %></h2>
+          <p><%= @boat.description %></p>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col">
+          <!-- insert booking form here -->
+          <h5>Want to book? Submit a request below...</h5>
+          <div class="booking-request-form">
+            <% @booking = Booking.new %>
+            <%= simple_form_for([@boat,@booking], :html=> { class: '' }) do |f| %>
+              <%= f.input :start_date %>
+              <%= f.input :end_date %>
+              <%= f.submit "Send booking request", class: 'btn btn-primary'%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
