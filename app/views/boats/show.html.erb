@@ -6,7 +6,14 @@
       <div class="row">
         <!-- Insert boat image carolsel here -->
         <% if !@boat.photos[0].nil? %>
-          <%= image_tag(@boat.photos[0], class: "boat-image-show") %>
+          <% images = [] %>
+          <% @boat.photos.each do |photo| %>
+            <% images << cloudinary_url(photo.key) %>
+          <% end %>
+          <div style="width: 100%; height: 250px">
+            <!-- Render the Image Carousel-->
+            <%= render "shared/image_carousel", image_urls: images %>
+          </div>
         <% end %>
       </div>
       <div class="row">
@@ -18,13 +25,13 @@
     </div>
     <div class="col-8">
       <div class="row">
-        <div class="col">
+        <div class="col ml-3">
           <h2><%= @boat.name %></h2>
           <p><%= @boat.description %></p>
         </div>
       </div>
       <div class="row my-3">
-        <div class="col">
+        <div class="col ml-3">
           <!-- insert booking form here -->
           <h5>Want to book? Submit a request below...</h5>
           <div class="booking-request-form">
