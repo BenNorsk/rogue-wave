@@ -1,0 +1,8 @@
+<%= render "shared/title_wave", element: "My Bookings" %>
+<div>
+  <div class="all-booking-cards">
+    <% @bookings.each do |booking| %>
+      <%= render "shared/booking_card", element: booking %>
+    <% end %>
+  </div>
+</div>
