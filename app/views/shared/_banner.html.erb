@@ -1,9 +1,14 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1511458206431-afcf3cebe562?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80);">
-  <div class="container">
-    <h1 class="rw-banner-text-size"><strong><p>Rent out suited boat for your adventure</p></strong> </h1>
-        <%= simple_form_for("", method: :get, url: boats_path) do |f| %>
-        <%= f.input :query, label: false, :input_html => { :class => 'rw-search_field' }, placeholder: 'Search..' %>
-        <%= f.submit :style => "display: none;" %>
-        <% end %>
+<section class="hover">
+  <div class="banner">
+    <div class="logo-big">
+      <%= image_tag("banner", options = { class: "img-tag-banner"}) %>
+    </div>
+    <div class="container search-div">
+  <!--     <h1 class="rw-banner-text-size"><strong><p>Rent out suited boat for your adventure</p></strong> </h1>
+   -->    <%= simple_form_for("", method: :get, url: boats_path) do |f| %>
+          <%= f.input :query, label: false, :input_html => { :class => 'rw-search_field' }, placeholder: 'Search your town to find the perfect boat nearby...' %>
+          <%= f.submit :style => "display: none;" %>
+          <% end %>
+    </div>
   </div>
-</div>
+</section>

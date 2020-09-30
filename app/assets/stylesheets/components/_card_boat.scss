@@ -5,7 +5,8 @@
   padding: 10px;
   margin-bottom: 20px;
   justify-content: space-between;
-  background-color: white;
+  background-image: image_url("white_bg");
+  background-size: cover;
   transition: all .2s ease-in-out;
 }
 

@@ -1,8 +1,30 @@
+
+.logo-big {
+  width: 500px;
+  padding: 20px 0px;
+  margin: 0 auto;
+}
+
 .banner {
   background-size: cover;
+  width: 100%;
+  background-size: cover;
   background-position: center;
-  padding: 200px 0;
-  height: calc(100vh - 70px);
+  padding: 0 auto;
+  // height: calc(100vh - 70px);
+  height: 800px;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('main_bg');
+}
+
+.img-tag-banner {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.search-div {
+  width: 500px;
+  padding: 20px 0px;
+  margin: 0 auto;
 }
 
 .banner h1 {
@@ -21,10 +43,12 @@
 }
 
 .rw-search_field {
-  background-color: white;
+  background-image: image_url("white_bg");
+  background-size: cover;
   color: black;
-  width: 200px;
+  width: 465px;
   border-radius: 5px;
-  margin-top: 50px;
   border: none;
+  padding: 30px;
+  margin: 0 auto;
 }

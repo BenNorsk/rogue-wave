@@ -26,9 +26,11 @@ html {
   border-radius: 4px;
   padding: 16px;
   width: 100%;
+  background-image: image_url("white_bg");
+  transition: all .2s ease-in-out;
 
   &:hover {
-    background-color: lightgray;
+    transform: scale(1.03);
   }
 }
 

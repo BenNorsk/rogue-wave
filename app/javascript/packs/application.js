@@ -8,6 +8,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("plugins/jquery.ripples-min")
 
 import 'bootstrap';
 import 'dropzone';
@@ -20,8 +21,18 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
 
+// JS for background
+import { water_effects } from "../plugins/water_effects"
+document.addEventListener('turbolinks:load', () => {
+  water_effects();
+})
+
+
+
 // Import stimulus controllers
 import 'controllers';
+
+
 
 console.log(">>> application js loaded")
 
