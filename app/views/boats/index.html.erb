@@ -24,28 +24,33 @@
           <% image_url = cloudinary_url(boat.photos[0].key) %>
           <% else %>
           <% image_url = 'https://source.unsplash.com/200x150/?sailboat' %>
-           <% end %>
-        <div class="boat-card-first-layer">
-        <%= image_tag(image_url, class: 'boat-card-left-layer-img') %>
-      <div class="boat-card-second-layer-right">
-        <div class="boat-card-third-layer-top">
-          <div>
-            <h4 class="rw-text-color-dark rw-text-bold"><%=  boat.name %> </h4>
-            <p class="rw-text-color-medium rw-text-light"> This is a lovely boat. <%= truncate(boat.description, :length => 80)  %></p>
-          </div>
-            <i class="far fa-heart heart"></i>
-        </div>
-          <div class="boat-card-third-layer-bottom">
-            <div class="boat-card-fourth-layer-review">
-              <div class="star rw-text-color-dark">
-                <i class="fas fa-star rw-text-color-dark star-icon "></i>
-                <p class="rw-text-color-dark rw-text-medium ">  <%= ((rand() * 5).round(2).to_s) %></p>
+          <% end %>
+          <div class="boat-card-first-layer">
+            <%= image_tag(image_url, class: 'boat-card-left-layer-img') %>
+            <div class="boat-card-second-layer-right">
+              <div class="boat-card-third-layer-top">
+                <div>
+                  <h4 class="rw-text-color-dark rw-text-bold"><%=  boat.name %> </h4>
+                  <p class="rw-text-color-medium rw-text-light"> This is a lovely boat. <%= truncate(boat.description, :length => 80)  %></p>
+                </div>
+                <i class="far fa-heart heart"></i>
+              </div>
+              <div class="boat-card-third-layer-bottom">
+                <div class="boat-card-fourth-layer-review">
+                  <div class="star rw-text-color-dark">
+                    <i class="fas fa-star rw-text-color-dark star-icon "></i>
+                    <p class="rw-text-color-dark rw-text-medium ">  <%= ((rand() * 5).round(2).to_s) %></p>
 
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
+        </div>
         <% end  %>
       </div>
     </div>
   </div>
 </div>
+
