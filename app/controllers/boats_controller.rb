@@ -9,6 +9,11 @@ class BoatsController < ApplicationController
     end
   end
 
+  def show
+    @boat = Boat.find(params["id"])
+  end
+
+
   # def search
   #   # This will search for any complete word within the boat or address field - currently partial maches are not supported.
   #   search_term = params['query']
