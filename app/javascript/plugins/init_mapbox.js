@@ -73,5 +73,5 @@ const addMarkersToMap = (map, markers) => {
 
 
 
-// export { initMapbox, boatSelected };
+export { initMapbox };
 

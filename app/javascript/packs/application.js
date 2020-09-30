@@ -13,13 +13,12 @@ import 'bootstrap';
 import 'dropzone';
 
 
-// JS for Maps
-// import 'mapbox-gl/dist/mapbox-gl.css';
-// import { initMapbox, boatSelected } from '../plugins/init_mapbox';
-// document.addEventListener('turbolinks:load', () => {
-//   initMapbox();
-//   boatSelected();
-// })
+//JS for Maps
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { initMapbox } from '../plugins/init_mapbox';
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
 
 // Import stimulus controllers
 import 'controllers';

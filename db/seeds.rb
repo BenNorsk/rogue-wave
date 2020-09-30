@@ -56,4 +56,27 @@ while (i < 10)
   i += 1
 end
 
+puts '---> Generating 30 bookings'
+i = 0
+all_users = User.all
+while (i < 30)
+  user = all_users(i / 3)
+  booking = Booking.create(
+    start_date: Date.at(rand * 0.9 +)
+    )
+
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "boat_id", null: false
+    t.index ["boat_id"], name: "index_bookings_on_boat_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+
+
 puts "---> Sucessfully created #{Boat.all.length} boats, allocated to #{User.all.length} users."
