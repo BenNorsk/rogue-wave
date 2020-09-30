@@ -6,7 +6,10 @@
         <%= image_tag(@boat.photos[0], class: "boat-image-show") %>
       </div>
       <div class="row">
-        <!-- Insert boat map here -->
+        <h5 class="pt-3">location...</h5>
+        <div class="boat-map-show">
+          <%= render "shared/map", elements: [@boat] %>
+        </div>
       </div>
     </div>
     <div class="col-8">
@@ -25,7 +28,7 @@
             <%= simple_form_for([@boat,@booking], :html=> { class: '' }) do |f| %>
               <%= f.input :start_date %>
               <%= f.input :end_date %>
-              <%= f.submit class: 'btn btn-primary'%>
+              <%= f.submit "Send booking request", class: 'btn btn-primary'%>
             <% end %>
           </div>
         </div>
