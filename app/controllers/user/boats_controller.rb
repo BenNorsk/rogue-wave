@@ -2,7 +2,12 @@ class User::BoatsController < ApplicationController
 
 
   def index
-    @user = current_user
+    if !params["boat_id"].nil?
+      @user = current_user
+      @selected_boat = Boat.find(params["boat_id"])
+    else
+      @user = current_user
+    end
   end
 
   def show
@@ -20,7 +25,13 @@ class User::BoatsController < ApplicationController
     end
     @boat.update(boat_params)
 
-    render :show
+    redirect_to user_boats_path
+  end
+
+  def destroy
+    @boat = Boat.find(params['id'])
+    @boat.destroy
+    redirect_to user_boats_path
   end
 
   private
