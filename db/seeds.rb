@@ -56,4 +56,5 @@ while (i < 10)
   i += 1
 end
 
+
 puts "---> Sucessfully created #{Boat.all.length} boats, allocated to #{User.all.length} users."
