@@ -4,8 +4,13 @@ class BoatsController < ApplicationController
   def index
     @boats = Boat.all
     @query = params['query']
-      if @query.present?
-      @boats = Boat.global_search(@query)
+    @boats = Boat.global_search(@query) if @query.present?
+
+    @markers = @boats.map do |boat|
+      {
+        lat: boat.address.lat,
+        lng: boat.address.long
+      }
     end
   end
 
@@ -35,6 +40,5 @@ class BoatsController < ApplicationController
   #   end
   #   additional_boats
   # end
-  def update
-  end
+  def update; end
 end
