@@ -32,6 +32,7 @@ const initMapbox = () => {
 
 };
 
+
 // const boatSelected = (boatClass) => {
 //   const boats = document.querySelectorAll(`.${boatClass}`);
 //   boats.addEventListener("click", (element) => {
@@ -40,10 +41,6 @@ const initMapbox = () => {
 //     initMapbox()
 //   });
 // }
-
-
-
-
 
 
 const fitMapToMarkers = (map, markers) => {
@@ -59,7 +56,7 @@ const addMarkersToMap = (map, markers) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
     const element = document.createElement('div');
     element.className = 'marker';
-    element.style.backgroundImage = `url('${marker.image_url}')`;
+    element.style.backgroundImage = `${image_url('white_bg.png')}`;
     element.style.backgroundSize = 'contain';
     element.style.width = '25px';
     element.style.height = '25px';
