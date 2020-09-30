@@ -6,10 +6,11 @@ class BoatsController < ApplicationController
     @query = params['query']
     @boats = Boat.global_search(@query) if @query.present?
 
-    @markers = @boats.map do |boat| {
-      lat: boat.address.lat,
-      lng: boat.address.long
-    }
+    @markers = @boats.map do |boat|
+      {
+        lat: boat.address.lat,
+        lng: boat.address.long
+      }
     end
   end
 
@@ -34,6 +35,5 @@ class BoatsController < ApplicationController
   #   end
   #   additional_boats
   # end
-  def update
-  end
+  def update; end
 end
