@@ -3,3 +3,36 @@
   height: 200px;
   object-fit: cover;
 }
+
+.boat-img {
+  width: 185px;
+  height: 185px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.first-layer-booking-card {
+  margin: 20px;
+  box-shadow: rgba(0,0,0,0.6);
+  background-color: white;
+  padding: 16px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: flex-start;
+  width: 600px;
+}
+
+.confirmed-booking {
+  width: 160px;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 64px;
+  padding-right: 64px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.second-layer-booking-card-right {
+  margin-left: 30px;
+}
