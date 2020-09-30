@@ -3,7 +3,9 @@
     <div class="col-4">
       <div class="row">
         <!-- Insert boat image carolsel here -->
-        <%= image_tag(@boat.photos[0], class: "boat-image-show") %>
+        <% if !@boat.photos[0].nil? %>
+          <%= image_tag(@boat.photos[0], class: "boat-image-show") %>
+        <% end %>
       </div>
       <div class="row">
         <h5 class="pt-3">location...</h5>
