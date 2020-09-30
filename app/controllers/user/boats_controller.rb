@@ -14,6 +14,7 @@ class User::BoatsController < ApplicationController
     @boat = Boat.find(params['id'])
     @user = current_user
     @boats = @user.boats
+    @booking = Booking.new
   end
 
   def update

@@ -17,7 +17,7 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/bennorsk/ckfnxja6109of1auj0b8u6fls'
       // That is the access token to this map
-      //pk.eyJ1IjoiYmVubm9yc2siLCJhIjoiY2tmNmpnZzZvMHRmNTMwcWR1NnVocnZmdCJ9.H1zfqOnfwYWPFKh5yA3eXA
+      //
     });
     // here the markers defintion used to be
     const markers = JSON.parse(mapElement.dataset.markers);
