@@ -1,8 +1,5 @@
-<%=  image_tag("water_bg.jpg", options = {class: "water-bg"}) %>
-<div class="rw-bg-dark" style="text-align: center;">
-  <h3 class="rw-medium-text-text p-3 rw-text-color-light">My bookings</h3>
-</div>
-<div class="rw-bg-light">
+<%= render "shared/title_wave", element: "My Bookings" %>
+<div>
   <div class="all-booking-cards">
     <% @bookings.each do |booking| %>
       <%= render "shared/booking_card", element: booking %>
