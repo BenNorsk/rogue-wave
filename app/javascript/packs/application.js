@@ -12,7 +12,10 @@ require("channels")
 import 'bootstrap';
 import 'dropzone';
 
-import "../plugins/flatpickr"
+import "../plugins/flatpickr";
+
+// typed effect on banner
+import '../plugins/typed_banner';
 
 
 //JS for Maps
