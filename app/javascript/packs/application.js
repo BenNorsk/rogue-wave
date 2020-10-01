@@ -20,8 +20,11 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
 
+
 // Import stimulus controllers
 import 'controllers';
+
+
 
 console.log(">>> application js loaded")
 

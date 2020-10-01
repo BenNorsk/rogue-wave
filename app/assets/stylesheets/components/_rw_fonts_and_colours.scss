@@ -66,6 +66,14 @@ $rw-highlight:#E67E22;
   color: $rw-dark;
 }
 
+.rw-second-background {
+  background-size: cover;
+  padding: 0 auto;
+  background-image: image_url("water_waves_bg");
+  height: calc(100vh - 70px);
+  width: 100%;
+}
+
 
 
 
