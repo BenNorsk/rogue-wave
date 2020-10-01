@@ -12,15 +12,11 @@ require("channels")
 import 'bootstrap';
 import 'dropzone';
 
-<<<<<<< HEAD
 import "../plugins/flatpickr"
 import '../plugins/init_autocomplete'
-=======
-import "../plugins/flatpickr";
 
 // typed effect on banner
 import '../plugins/typed_banner';
->>>>>>> master
 
 
 //JS for Maps
