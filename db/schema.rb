@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2020_10_01_092503) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.bigint "boat_id", null: false
-    t.string "message"
+    t.text "message"
     t.string "status"
     t.index ["boat_id"], name: "index_bookings_on_boat_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
