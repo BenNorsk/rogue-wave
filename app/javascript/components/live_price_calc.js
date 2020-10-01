@@ -9,25 +9,43 @@ const numberFormat = (x) => {
   return x.toString().replace(numberPattern, ",");
 }
 
+const defined = (variable) => {
+  return typeof(variable) !== "undefined"
+}
+
 const calcPrice = () => {
   totalPrice = document.getElementById("live-price-calc");
   daysElement = document.getElementById("live-days-calc");
   dateRangeInput = document.getElementById("date-range");
-  // console.log(dateRangeInput.value);
+  plural = document.getElementById("plural-days");
+
+  let days = 0;
+  let totalPriceValue = 0;
 
   if (dateRangeInput === null ) { return}
 
   if (dateRangeInput.value) {
     const matchValues = dateRangeInput.value.match(datePattern);
+
     let startDate = matchValues["groups"]["startdate"];
     let endDate = matchValues["groups"]["enddate"];
     let startEndDate = matchValues["groups"]["startenddate"];
 
-    const days = (Date.parse(endDate) - Date.parse(startDate)) / (60*60*24*1000) + 1;
-    const totalPriceValue = Number(pricePerDay.innerText) * days;
+    if (defined(startDate)) {
+      days = (Date.parse(endDate) - Date.parse(startDate)) / (60*60*24*1000) + 1;
+      totalPriceValue = Number(pricePerDay.innerText) * days;
+      plural.innerText = "s"
+    }
+    if (defined(startEndDate)) {
+      days = 1;
+      totalPriceValue = Number(pricePerDay.innerText);
+      plural.innerText = ""
+    }
 
     totalPrice.innerText = numberFormat(totalPriceValue.toFixed(2));
     daysElement.innerText = days;
+
+
   } else {
     totalPrice.innerText = 0;
     daysElement.innerText = 0;

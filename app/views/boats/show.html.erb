@@ -1,5 +1,4 @@
 <%= render "shared/title_wave", element: "#{@boat.name}" %>
-
 <div class="container my-4">
   <div class="row">
     <div class="col-4">
@@ -26,8 +25,10 @@
     <div class="col-8">
       <div class="row">
         <div class="col ml-3">
-          <h2><%= @boat.name %></h2>
-          <h2>$ <span id="price-per-day">1564.57</span></h2>
+          <div class="show-boat-title">
+            <h2><%= @boat.name %></h2>
+            <h3 class="boat-price-lighter-weight">$ <span id="price-per-day">1564.57</span><small> / day</small></h3>
+          </div>
           <p><%= @boat.description %></p>
         </div>
       </div>
@@ -44,8 +45,9 @@
             <% end %>
           </div>
           <div class="live-price">
-          <p>Total <span class="total-price-lg">$</span><span class="total-price-lg" id="live-price-calc">0</span> for <span id="live-days-calc">0</span> days</p>
-          <small>Terms and conditions apply.</small>
+            <p>Total <span class="total-price-lg">$</span><span class="total-price-lg" id="live-price-calc">0</span> for <span id="live-days-calc">0</span> day<span id="plural-days">s</span></p>
+            <small>Terms and conditions apply.</small>
+            <small>Don't drink and sail.</small>
           </div>
         </div>
       </div>
