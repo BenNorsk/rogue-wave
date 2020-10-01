@@ -1,0 +1,44 @@
+.slide {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.slide.slide--current {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.carousel_image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-next-previous{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 10%;
+  color: rgba(white, 0.5);
+  background-color: rgba(white, 0.5);
+  opacity: 0.2;
+  &:hover {
+    opacity: 1;
+  }
+  &.right{
+    position: absolute;
+    top: 0;
+    left: 90%;
+  }
+  &.left{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
