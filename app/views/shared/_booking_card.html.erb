@@ -11,20 +11,25 @@
     </div>
     <div class=second-layer-booking-card-right>
       <div class="booking-upper-line">
+
         <% user = User.find(booking.user_id) %>
         <h4 class="rw-text-color-dark rw-light-text"><%= "#{user.first_name} #{user.last_name}" %></h4>
         <div class="booking-upper-line">
-
-          <%= button_to([:user, booking], method: :patch, params: { booking: { status: 'accepted' } }, class: "btn-clean mr-2") do %>
-          <i class="fas fa-check-square icon-link icon-link-booking"></i>
-
-          <%= button_to([:user, booking], method: :patch, params: { booking: { status: 'rejected' } }, class: "btn-clean") do %>
-          <i class="fas fa-window-close icon-link icon-link-booking"></i>
-          <% end %>
-
-
+          <% if booking.status == "pending" %>
+            <%= button_to([:user, booking], method: :patch, params: { booking: { status: 'accepted' } }, class: "btn-clean mr-2", data: {confirm: "Are you sure you want to accept the booking request?" }) do %>
+              <i class="fas fa-check-square icon-link icon-link-booking"></i>
+            <% end %>
+            <%= button_to([:user, booking], method: :patch, params: { booking: { status: 'rejected' } }, class: "btn-clean", data: {confirm: "Are you sure you want to cancel the booking request?" }) do %>
+              <i class="fas fa-window-close icon-link icon-link-booking"></i>
+            <% end %>
+          <% elsif booking.status == "accepted" %>
+            <p class="accepted-booking rw-light-text">accepted</p>
+          <% elsif booking.status == "cancelled" %>
+            <p class="cancelled-booking rw-light-text">cancelled</p>
           <% end %>
         </div>
+
+
       </div>
       <div>
         <% sd = booking.start_date %>

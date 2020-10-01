@@ -6,11 +6,10 @@ class User::BookingsController < ApplicationController
   def update
     @booking = Booking.find(params["id"])
     if @booking.update(booking_params)
-      redirect_to("/playground", notice: "Your booking status has been successfully updated.")
+      redirect_to( user_bookings_path, notice: "Your booking status has been successfully updated.")
     else
-      redirect_to("/playground", alert: "Your booking status could not have been updated.")
+      redirect_to( user_bookings_path, alert: "Something went wrong. Your booking status has not been updated.")
     end
-
   end
 
   private

@@ -3,7 +3,9 @@
   <div>
     <div class="all-booking-cards">
       <% @bookings.each do |booking| %>
+      <div class="p-2">
         <%= render "shared/booking_card", element: booking %>
+      </div>
       <% end %>
     </div>
   </div>
