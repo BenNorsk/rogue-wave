@@ -1,0 +1,24 @@
+<!-- Receives an array of image urls -->
+<!-- < render "shared/image_carousel", image_urls: [image_url, image_url] > -->
+<!-- connects to a js controller "carousel". Pass data attribute "index = 0"-->
+<div data-controller="carousel" data-carousel-index="0" style="width: 100%; height: 100%">
+  <div class="d-flex position-relative" style="width: 100%; height: 100%">
+
+    <!-- link user action to controller method-->
+    <div class="carousel-next-previous left" data-action="click->carousel#previous"><i class="fas fa-chevron-circle-left"></i></div>
+
+    <!-- Loop through for each image url -->
+    <% image_urls.each do |url| %>
+    <!-- data-target="ctrl_name.taget_name" -->
+      <div data-target="carousel.slide" class="slide">
+        <div class="carousel_image" style="background-image: linear-gradient(rgba(0, 0, 0,0.1) 50%,rgba(0, 0, 0, 0.5)), url(<%= url %>)">
+        </div>
+      </div>
+    <% end %>
+
+    <!-- link user action to controller method-->
+    <div class="carousel-next-previous right" data-action="click->carousel#next"><i class="fas fa-chevron-circle-right"></i></div>
+  </div>
+</div>
+
+

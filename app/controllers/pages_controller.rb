@@ -6,4 +6,7 @@ class PagesController < ApplicationController
 
   def playground
   end
+
+  def image_carousel
+  end
 end
