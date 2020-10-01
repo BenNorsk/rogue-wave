@@ -3,23 +3,23 @@
 <!-- Then, go ahead and remove the current placeholders (i.e. "Boat Name", etc.) -->
 
 <div class="boat-card-first-layer">
-  <div class="boat-card-left-layer-img rw-bg-light"></div>
+  <div class="boat-card-left-layer-img rw-bg-light">
+    <% images = [] %>
+    <% element.photos.each do |photo| %>
+      <% images << cloudinary_url(photo.key) %>
+    <% end %>
+    <%= render 'shared/image_carousel', image_urls: images %>
+  </div>
   <div class="boat-card-second-layer-right">
     <div class="boat-card-third-layer-top">
-      <div>
-        <h4 class="rw-text-color-dark rw-text-bold"> Boat Name <%=  "element.name" %> </h4>
-        <p class="rw-text-color-medium rw-text-light"> This is a lovely boat. <%= "element.description" %></p>
-      </div>
-      <i class="far fa-heart heart"></i>
+        <h4 class="rw-text-color-dark rw-medium-text"> <%=  "#{element.name}" %> </h4>
     </div>
+    <p class="rw-light-text small-text"><%= "#{element.address.city}, #{element.address.street_address}" %></p>
     <div class="boat-card-third-layer-bottom">
-      <div class="boat-card-fourth-layer-review">
-        <div class="star rw-text-color-dark">
-          <i class="fas fa-star rw-text-color-dark star-icon "></i>
-          <p class="rw-text-color-dark rw-text-medium ">  <%= ((rand() * 5).round(2).to_s) %></p>
-        </div>
+      <div class="price-div">
+        <h4 class="rw-bold-text rw-text-color-dark">$<%= "#{element.price_per_day}" %></h4>
+        <p class="rw-light-text mt-1">  / day</p>
       </div>
-      <p class="rw-text-bold rw-text-color-dark">$ 1500 <%= "element.price" %> / day</p>
     </div>
   </div>
 </div>
