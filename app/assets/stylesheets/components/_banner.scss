@@ -11,9 +11,7 @@
   background-size: cover;
   background-position: center;
   padding: 0 auto;
-  // height: calc(100vh - 70px);
-  height: 800px;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('main_bg');
+  height: calc(100vh - 70px);
 }
 
 .img-tag-banner {
