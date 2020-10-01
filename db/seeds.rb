@@ -3,15 +3,20 @@ require 'betterlorem'
 require 'date'
 
 # Remove all current entries in the DB
-puts '---> Destroying all DB entries"'
+puts '---> Destroying all DB entries'
 User.destroy_all
 Address.destroy_all
 Boat.destroy_all
 
+# Config -> set to what you want to generate
+user_number = 10
+booking_number = 3
+image_number = 3
 
-puts '---> Generating 10 fake users"'
+
+puts "---> Generating #{user_number} fake users"
 users = []
-10.times do
+user_number.times do
   users << User.create(
     first_name: Faker::Name.first_name  ,
     last_name: Faker::Name.last_name ,
@@ -33,9 +38,13 @@ def long_range (min, max)
   long
 end
 
-puts '---> Generating 10 fake boats"'
+puts "---> Generating #{user_number} fake boats"
+
+
+boat_models = %w[Fishing Dinghy Deck Bowrider Catemaran Cuddy Trawler Cabin Yacht Jet Banana Pontoon Life]
+
 i = 0
-while (i < 10)
+while (i < user_number)
   i.even? ? j = 2 : j = 1
   j.times do
     new_address = Address.create(
@@ -46,13 +55,27 @@ while (i < 10)
       longitude: long_range(10.46, 10.81)
     )
 
-    Boat.create(
-      name: Faker::Name.name,
-      description: BetterLorem.p(1, true),
-      price_per_day: Faker::Number.within(range: 500..2000),
+    boat = Boat.create(
+      name: "#{boat_models.sample} Boat #{Faker::Vehicle.fuel_type}",
+      description: "#{Faker::Marketing.buzzwords}, #{Faker::Marketing.buzzwords}, #{Faker::Marketing.buzzwords}, #{Faker::Marketing.buzzwords}",
+      price_per_day: Faker::Number.within(range: 500..1000),
       user_id: users[i].id,
       address_id: new_address.id
     )
+
+    images_url = []
+    k = 1
+    image_number.times do
+      images_url << 'https://source.unsplash.com/400x300/?' + "boat/#{k}"
+      k += 1
+    end
+
+    images_url.each_with_index do |image, i|
+      file = URI.open(image)
+      boat.photos.attach(io: file, filename: i.to_s, content_type: 'image/png')
+    end
+
+    puts "Boat #{boat.name} created with #{image_number} attached pictures"
   end
   i += 1
 end
@@ -60,32 +83,18 @@ end
 puts "---> Sucessfully created #{Boat.all.length} boats, allocated to #{User.all.length} users."
 
 
-
-puts 'Generating 3 bookings per user.'
+puts "---> Generating #{booking_number} bookings per user."
 bookings = []
 date_today = Date.new(2020, 10, 1)
 users.each do |user|
-  3.times do
+  booking_number.times do
     date_start = Date.new(date_today.year, date_today.month, (date_today.day + (14 * rand).to_i))
     date_end = Date.new(date_start.year, date_start.month, (date_start.day + (5 * rand).to_i))
-    Booking.create( { start_date: date_start, end_date: date_end, user_id: user.id, boat_id: Boat.all.sample.id } )
+    message = Faker::Quote.yoda
+    status = %w(pending accepted cancelled).sample
+    Booking.create( { start_date: date_start, end_date: date_end, user_id: user.id, boat_id: Boat.all.sample.id, message: message, status: status } )
   end
 end
 
-puts "---> Successfully created 3 bookings per user, 30 in total."
-
-# create_table "bookings", force: :cascade do |t|
-#     t.datetime "start_date"
-#     t.datetime "end_date"
-#     t.datetime "created_at", precision: 6, null: false
-#     t.datetime "updated_at", precision: 6, null: false
-#     t.bigint "user_id", null: false
-#     t.bigint "boat_id", null: false
-#     t.index ["boat_id"], name: "index_bookings_on_boat_id"
-#     t.index ["user_id"], name: "index_bookings_on_user_id"
-#   end
-
-
-
-
+puts "---> Successfully created #{booking_number} bookings per user, #{booking_number * user_number} in total."
 
