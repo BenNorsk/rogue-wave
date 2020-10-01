@@ -8,8 +8,8 @@ class BoatsController < ApplicationController
 
     @markers = @boats.map do |boat|
       {
-        lat: boat.address.lat,
-        lng: boat.address.long
+        lat: boat.address.latitude,
+        lng: boat.address.longitude
       }
     end
   end
@@ -19,8 +19,8 @@ class BoatsController < ApplicationController
 
     @markers = [@boat].map do |boat|
       {
-        lat: boat.address.lat,
-        lng: boat.address.long
+        lat: boat.address.latitude,
+        lng: boat.address.longitude
       }
     end
   end
