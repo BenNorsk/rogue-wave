@@ -1,0 +1,31 @@
+
+<div class="boat-card-first-layer">
+  <div class="boat-card-left-layer-img rw-bg-light">
+    <% images = [] %>
+    <% element.photos.each do |photo| %>
+      <% images << cloudinary_url(photo.key) %>
+    <% end %>
+    <%= render 'shared/image_carousel', image_urls: images %>
+  </div>
+  <div class="boat-card-second-layer-right">
+    <div class="boat-card-third-layer-top">
+        <h4 class="rw-text-color-dark rw-medium-text"> <%=  "#{element.name}" %> </h4>
+        <div>
+          <%= link_to edit_user_boat_path(element), class: "icon-link" do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+          <%= link_to user_boat_path(element), class: "icon-link", method: :delete do %>
+            <i class='fas fa-trash'></i>
+          <% end %>
+
+        </div>
+    </div>
+    <p class="rw-light-text small-text"><%= "#{element.address.city}, #{element.address.street_address}" %></p>
+    <div class="boat-card-third-layer-bottom">
+      <div class="price-div">
+        <h4 class="rw-bold-text rw-text-color-dark">$<%= "#{element.price_per_day}" %></h4>
+        <p class="rw-light-text mt-1">  / day</p>
+      </div>
+    </div>
+  </div>
+</div>

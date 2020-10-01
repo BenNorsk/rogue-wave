@@ -68,7 +68,9 @@ users.each do |user|
   3.times do
     date_start = Date.new(date_today.year, date_today.month, (date_today.day + (14 * rand).to_i))
     date_end = Date.new(date_start.year, date_start.month, (date_start.day + (5 * rand).to_i))
-    Booking.create( { start_date: date_start, end_date: date_end, user_id: user.id, boat_id: Boat.all.sample.id } )
+    message = Faker::Quote.yoda
+    status = %w(pending accepted cancelled).sample
+    Booking.create( { start_date: date_start, end_date: date_end, user_id: user.id, boat_id: Boat.all.sample.id, message: message, status: status } )
   end
 end
 
