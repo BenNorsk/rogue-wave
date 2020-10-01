@@ -5,7 +5,6 @@ class BoatsController < ApplicationController
     @boats = Boat.all
     @query = params['query']
     @boats = Boat.global_search(@query) if @query.present?
-
     @markers = @boats.map do |boat|
       {
         lat: boat.address.latitude,
