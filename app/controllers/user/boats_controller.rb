@@ -10,6 +10,21 @@ class User::BoatsController < ApplicationController
     end
   end
 
+  def new
+    @boat = Boat.new
+    @boat.build_address
+  end
+
+  def create
+    @boat = Boat.new(create_boat_params)
+    @boat.user = current_user
+    if @boat.save
+      redirect_to @boat
+    else
+      render :new
+    end
+  end
+
   def show
     @boat = Boat.find(params['id'])
     @user = current_user
@@ -38,6 +53,12 @@ class User::BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :description, :photos, photos: [])
+    params.require(:boat).permit(:name, :address, :description, :photos, photos: [])
+  end
+
+  def create_boat_params
+    params.require(:boat).permit(
+      :name, :description, :price_per_day, :photos, photos: [], address_attributes: %i[id street_address city country]
+    )
   end
 end
