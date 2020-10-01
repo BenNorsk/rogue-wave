@@ -12,6 +12,8 @@ require("channels")
 import 'bootstrap';
 import 'dropzone';
 
+import "../plugins/flatpickr"
+
 
 //JS for Maps
 import 'mapbox-gl/dist/mapbox-gl.css';
