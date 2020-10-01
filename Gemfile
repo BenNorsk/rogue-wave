@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
 # This gem helps us to code the map.
 gem 'geocoder'
+gem 'country_select'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

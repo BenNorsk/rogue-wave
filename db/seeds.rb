@@ -42,8 +42,8 @@ while (i < 10)
       city: "Oslo",
       street_address: Faker::Address.street_address,
       country: "Norway",
-      lat: lat_range(59.74, 59.94),
-      long: long_range(10.46, 10.81)
+      latitude: lat_range(59.74, 59.94),
+      longitude: long_range(10.46, 10.81)
     )
 
     Boat.create(
