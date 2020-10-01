@@ -9,6 +9,8 @@ import {
   insertAfter
 } from "helpers";
 
+console.log(">>> Dropzone controller loaded")
+
 export default class extends Controller {
   static targets = ["input"];
 
