@@ -13,6 +13,7 @@
   padding: 0 auto;
   height: calc(100vh - 70px);
   position: relative;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url("main_bg_cropped.jpg");
 }
 
 .img-tag-banner {
