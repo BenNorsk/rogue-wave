@@ -14,7 +14,7 @@ class Boat < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search, against: %i[name], associated_against:
-  { address: %i[city country lat long street_address] }, using:
+  { address: %i[city country latitude longitude street_address] }, using:
   {
     tsearch: { prefix: true }
   }

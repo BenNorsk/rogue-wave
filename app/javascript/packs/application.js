@@ -13,6 +13,7 @@ import 'bootstrap';
 import 'dropzone';
 
 import "../plugins/flatpickr"
+import '../plugins/init_autocomplete'
 
 
 //JS for Maps
