@@ -1,5 +1,7 @@
 import Typed from 'typed.js';
 
+console.log(">>> Typed.js loaded")
+
 const loadDynamicBannerText = () => {
   // check if there is some text to animate
   const bannerText = document.getElementById('banner-typed-text');

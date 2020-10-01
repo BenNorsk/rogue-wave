@@ -27,6 +27,7 @@
       <div class="row">
         <div class="col ml-3">
           <h2><%= @boat.name %></h2>
+          <h2>$ <span id="price-per-day">1564.57</span></h2>
           <p><%= @boat.description %></p>
         </div>
       </div>
@@ -37,10 +38,14 @@
           <div class="booking-request-form">
             <% @booking = Booking.new %>
             <%= simple_form_for([@boat,@booking], :html=> { class: '' }) do |f| %>
-              <%= f.input :start_date, as: :string, required: false, wrapper: false, label: false, placeholder: "Check in date", input_html: {class: "datepicker"} %>
+              <%= f.input :start_date, as: :string, required: true, wrapper: false, label: false, placeholder: "Check in date", input_html: {class: "datepicker", id: "date-range"} %>
               <%= f.input :message, as: :text, placeholder: "Include a message to the boat owner so they can get to know you..." %>
               <%= f.submit "Send booking request", class: 'btn btn-primary'%>
             <% end %>
+          </div>
+          <div class="live-price">
+          <p>Total <span class="total-price-lg">$</span><span class="total-price-lg" id="live-price-calc">0</span> for <span id="live-days-calc">0</span> days</p>
+          <small>Terms and conditions apply.</small>
           </div>
         </div>
       </div>
