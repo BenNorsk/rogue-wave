@@ -4,6 +4,18 @@
   height: 70px;
 }
 
+.logo-in-navbar {
+  background-image: image_url("banner");
+  background-size: 80px 60px;
+  width: 80px;
+  height: 60px;
+  transition: all .2s ease-in-out;
+}
+
+.logo-in-navbar:hover {
+  transform: scale(1.05);
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -19,9 +31,26 @@
 }
 
 .rw-title:hover {
-  color: #95A19D;
+  color: white;
+  background-color: #95A19D;
   text-decoration: none;
   font-size: 2rem;
+}
+
+.rw-navbar-links {
+  transition: all .2s ease-in-out;
+  color: $rw-light;
+}
+
+
+.links-full:hover {
+  color: $rw-dark;
+  background-color: $rw-light;
+}
+
+.rw-navbar-links:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .rw-navbar-button {
@@ -32,7 +61,4 @@
   margin-right: 10px;
 }
 
-.rw-navbar-links:hover {
-  text-decoration: none;
-  color: white;
-}
+

@@ -5,7 +5,9 @@
 }
 
 .my-bookings-container {
-  margin: 30px auto;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
   size: 800px;
 }
 
@@ -19,12 +21,18 @@
 .first-layer-booking-card {
   margin: 0 auto;
   box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
-  background-color: white;
+  background-image: image_url("white_bg");
+  background-size: cover;
   padding: 16px;
   border-radius: 2px;
   display: flex;
   justify-content: flex-start;
   width: 600px;
+  transition: all .2s ease-in-out;
+}
+
+.first-layer-booking-card:hover {
+  transform: scale(1.03);
 }
 
 .confirmed-booking {
