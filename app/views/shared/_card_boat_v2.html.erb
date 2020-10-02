@@ -1,0 +1,43 @@
+<!-- Usage -->
+<!-- set hide_actions: true if you dont want the edit button -->
+<!-- pass a boat as the element -->
+<!-- < %= render '/shared/card_boat_v2', { element: @user.boats.last, hide_actions: false } % > -->
+
+<div class="boat-card-v2">
+  <%= link_to "", boat_path(element), class: "stretched-link" %>
+  <div class="picture-carousel">
+    <% images = [] %>
+    <% element.photos.each do |photo| %>
+      <% images << cloudinary_url(photo.key) %>
+    <% end %>
+    <%= render 'shared/image_carousel', image_urls: images %>
+  </div>
+  <div class="card-information">
+    <div class="card-information-top">
+      <div class="card-information-top-title-address">
+        <h4 class="rw-text-color-dark rw-medium-text"> <%= element.name %></h4>
+        <p class="rw-light-text"><i class="far fa-map"></i> <%= "#{element.address.city}, #{element.address.street_address}" %></p>
+      </div>
+      <% hide = hide_actions ? "hide" : "false" %>
+      <div class="card-actions <%= hide %>">
+        <h4>
+          <%= link_to [:user, element] do %><i class="far fa-edit"></i><% end %>
+          <%= link_to [:user, element], method: :delete, data: {confirm: "Are you sure?"} do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </h4>
+      </div>
+    </div>
+    <div class="card-information-bottom">
+      <div class="card-boat-description">
+        <p class="rw-light-text m-0 p-0"><%= truncate(element.description, :length => 100) %></p>
+      </div>
+      <div class="card-price">
+        <h4 class="rw-bold-text rw-text-color-dark my-0 py-0">
+          $<%= "#{element.price_per_day} " %>
+        </h4>
+        <p class="my-0 py-0 pl-1"> /day</p>
+      </div>
+    </div>
+  </div>
+</div>
