@@ -6,9 +6,9 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 15px;
+  padding: 8px;
   width: 100%;
-  height: 100px;
+  height: 60px;
   background-color: $rw-dark;
   opacity: 0.8;
 
@@ -17,6 +17,7 @@
     color: $rw-light;
     margin: 0;
     padding: 0;
+    font-size: 0.7rem;
   }
 }
 .rw-headerfont {
@@ -30,9 +31,35 @@
   color: $rw-light;
   opacity: 0.4;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 18px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
   opacity: 1;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .rw-footer {
+    height: 80px;
+    p {
+      font-size: 0.7rem;
+    }
+  }
+  .footer-links a {
+    font-size: 24px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .rw-footer {
+    height: 80px;
+    p {
+      font-size: 0.7rem;
+    }
+  }
+  .footer-links a {
+    font-size: 24px;
+  }
 }
