@@ -5,11 +5,15 @@ const bookingsTab = () => {
   const bookingCards2 = document.querySelector("#booking-cards2")
 
   myBookingsTab.addEventListener("click", (event) => {
+    myBookingsTab.classList.add("rw-active-tab");
+    myIncomingBookingsTab.classList.remove("rw-active-tab");
     bookingCards.classList.remove("rw-hidden");
     bookingCards2.classList.add("rw-hidden")
   });
 
   myIncomingBookingsTab.addEventListener("click", (event) => {
+    myIncomingBookingsTab.classList.add("rw-active-tab");
+    myBookingsTab.classList.remove("rw-active-tab");
     bookingCards2.classList.remove("rw-hidden");
     bookingCards.classList.add("rw-hidden");
   });
