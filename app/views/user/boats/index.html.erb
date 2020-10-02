@@ -1,19 +1,14 @@
 <%= render "shared/title_wave", element: "#{@user.first_name}'s Boats" %>
-
-<div class="boats-container rw-background-all">
-  <div class="row">
-    <div class="col-6 py-0 all-boats">
-      <div class="user-boat-list">
-        <% @user.boats.each do |boat| %>
-          <% select = boat == @selected_boat ? "selected-card" : ""  %>
-          <div class="user-boat-card position-relative <%= select %>">
-            <%= render 'user_boat_card', boat: boat %>
-          </div>
-        <% end %>
-
+<div class="container mt-4">
+  <div class="user-boats-list">
+    <% @user.boats.each do |boat| %>
+      <%= render '/shared/card_boat_v2', { element: boat, hide_actions: false } %>
+    <% end %>
+    <div class="boat-card-v2 d-flex justify-content-center align-items-center">
+      <%= link_to "", new_user_boat_path(current_user), class: "stretched-link" %>
+      <div class="create-new-boat">
+        <i class="fas fa-plus"></i>
       </div>
     </div>
   </div>
 </div>
-
-
