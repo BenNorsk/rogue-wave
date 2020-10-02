@@ -1,6 +1,13 @@
-<div class="rw-second-background">
-  <%= render "shared/title_wave", element: "My Bookings" %>
-  <div>
+
+<%= render "shared/title_wave", element: "My Bookings" %>
+
+<div class="rw-tab">
+  <h4 class="rw-light-text rw-text-color-light" id="my-bookings-tab">My Boat Bookings</h4>
+  <h4 class="rw-light-text rw-text-color-light" id="my-incoming-bookings-tab">Incoming Booking Requests</h4>
+</div>
+
+
+  <div class="rw-background-all pt-4" id="booking-cards">
     <div class="all-booking-cards">
       <% @bookings.each do |booking| %>
       <div class="p-2">
@@ -9,5 +16,16 @@
       <% end %>
     </div>
   </div>
-</div>
+
+
+    <div class="rw-background-all pt-4" id="booking-cards2">
+    <div class="all-booking-cards displayed">
+      <% @boat_bookings[0].each do |booking| %>
+      <div class="p-2">
+        <%= render "shared/booking_card", element: booking %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
 

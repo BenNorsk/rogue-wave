@@ -1,4 +1,10 @@
 <% booking = element %>
+<% @own_booking = nil %>
+<% if current_user.id == booking.user_id %>
+  <% @own_booking = true %>
+<% else %>
+  <% @own_booking = false %>
+<% end %>
 
   <div class="first-layer-booking-card">
     <div class="second-layer-booking-card-left">
@@ -13,15 +19,22 @@
       <div class="booking-upper-line">
 
         <% user = User.find(booking.user_id) %>
-        <h4 class="rw-text-color-dark rw-light-text"><%= "#{user.first_name} #{user.last_name}" %></h4>
+        <% if @own_booking == true %>
+            <h4 class="rw-text-color-dark rw-light-text"><%= "#{Boat.find(booking.boat_id).name}" %></h4>
+        <% else %>
+            <h4 class="rw-text-color-dark rw-light-text"><%= "#{user.first_name} #{user.last_name}" %></h4>
+        <% end %>
+
         <div class="booking-upper-line">
-          <% if booking.status == "pending" %>
-            <%= button_to([:user, booking], method: :patch, params: { booking: { status: 'accepted' } }, class: "btn-clean mr-2", data: {confirm: "Are you sure you want to accept the booking request?" }) do %>
+          <% if booking.status == "pending" && @own_booking == false %>
+            <%= button_to([:user, booking], method: :patch, params: { currenbooking: { status: 'accepted' } }, class: "btn-clean mr-2", data: {confirm: "Are you sure you want to accept the booking request?" }) do %>
               <i class="fas fa-check-square icon-link icon-link-booking"></i>
             <% end %>
             <%= button_to([:user, booking], method: :patch, params: { booking: { status: 'rejected' } }, class: "btn-clean", data: {confirm: "Are you sure you want to cancel the booking request?" }) do %>
               <i class="fas fa-window-close icon-link icon-link-booking"></i>
             <% end %>
+          <% elsif booking.status == "pending" && @own_booking == true %>
+            <p class="pending-booking rw-light-text">pending...</p>
           <% elsif booking.status == "accepted" %>
             <p class="accepted-booking rw-light-text">accepted</p>
           <% elsif booking.status == "cancelled" %>
@@ -36,15 +49,9 @@
         <% ed = booking.end_date %>
           <p class="rw-text-color-dark rw-light-text"><%= "#{sd.day}.#{sd.month} - #{ed.day}.#{ed.month}.#{ed.year}, for the #{Boat.find(booking.boat_id).name }" %></p>
       </div>
-      <p class="rw-text-color-dark rw-medium-text booking-message"><i class="fas fa-comment-dots rw-text-color-light mr-2"></i><%= booking.message %></p>
-      <!-- <div class="third-layer-booking-card-bottom">
-        <h6 class="rw-bold-text p-1 rw-text-color-medium">$ <%= Boat.find(booking.boat_id).price_per_day  %></h6>
-
-        <div class="confirmed-booking rounded rw-bg-dark">
-          <p class="rw-text-color-light rw-medium-text mr-1">confirmed</p>
-          <i class="fas fa-check rw-text-color-light mt-1"></i>
-        </div>
-      </div> -->
+      <% if @own_booking == false %>
+        <p class="rw-text-color-dark rw-medium-text booking-message"><i class="fas fa-comment-dots rw-text-color-light mr-2"></i><%= booking.message %></p>
+      <% end %>
     </div>
   </div>
 

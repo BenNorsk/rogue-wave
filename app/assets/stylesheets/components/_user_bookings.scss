@@ -89,17 +89,65 @@
   border-radius: 5px;
   border: 1px solid rgb(200,100,100);
   background-color: white;
+  color: rgb(200,100,100);
 }
 
-.confirmed-booking {
+.accepted-booking {
   padding: 5px;
   border-radius: 5px;
   border: 1px solid rgb(100,200,100);
   background-color: white;
+  color: rgb(100,200,100);
+}
+
+.pending-booking {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(100,100,100);
+  background-color: white;
+  color: rgb(100,100,100);
+
 }
 
 .icon-link-booking {
   font-size: 30px;
+}
+
+// ---------------- Here is the index page
+
+.rw-tab {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #24282B;
+  color: #95A19D;
+}
+
+#my-bookings-tab {
+  text-align: center;
+  width: 50%;
+  transition: all .2s ease-in-out;
+}
+
+#my-bookings-tab:hover {
+  color: white;
+}
+
+
+#my-incoming-bookings-tab {
+  text-align: center;
+  height: 100%;
+  width: 50%;
+  border-left: 2px solid #95A19D;
+  transition: all .2s ease-in-out;
+}
+
+#my-incoming-bookings-tab:hover {
+  color: white;
+}
+
+.rw-hidden {
+  display:none;
 }
 
 

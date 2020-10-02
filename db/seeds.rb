@@ -13,10 +13,20 @@ user_number = 10
 booking_number = 3
 image_number = 3
 
+# Making one user we can always use
+
+
 
 puts "---> Generating #{user_number} fake users"
 users = []
-user_number.times do
+puts "creating our main user tom"
+users << User.create(
+    first_name: "Tom ",
+    last_name: "Murray",
+    email: "tom@gmail.com",
+    password: 'topsecret')
+
+(user_number - 1).times do
   users << User.create(
     first_name: Faker::Name.first_name  ,
     last_name: Faker::Name.last_name ,
