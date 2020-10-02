@@ -27,12 +27,12 @@
   border-radius: 2px;
   display: flex;
   justify-content: flex-start;
-  width: 600px;
+  width: 800px;
   transition: all .2s ease-in-out;
 }
 
 .first-layer-booking-card:hover {
-  transform: scale(1.03);
+  box-shadow: 4px 4px 12px rgba(255,255,255, 0.2);
 }
 
 .confirmed-booking {
@@ -46,13 +46,60 @@
   padding-bottom: 4px;
 }
 
+.second-layer-booking-card-left {
+  background-color: grey;
+  width: 180px;
+  height: 120px;
+  margin-right: 10px;
+  object-fit:cover;
+}
+
 .second-layer-booking-card-right {
+  width: 70%;
+  height: 100%;
   margin-left: 30px;
 }
 
 .third-layer-booking-card-bottom {
   display: flex;
   justify-content: space-between;
+}
+
+.booking-message {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #95A19D;
+  background-color: white;
+}
+
+.booking-upper-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-clean {
+  background: none;
+  border: none;
+  appearance: none;
+  padding: 0;
+}
+
+.cancelled-booking {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(200,100,100);
+  background-color: white;
+}
+
+.confirmed-booking {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(100,200,100);
+  background-color: white;
+}
+
+.icon-link-booking {
+  font-size: 30px;
 }
 
 

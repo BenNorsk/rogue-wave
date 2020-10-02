@@ -15,6 +15,6 @@ Rails.application.routes.draw do
 
   namespace :user do
     resources :boats
-    resources :bookings, only: %i[index destroy]
+    resources :bookings, only: %i[index destroy update]
   end
 end
