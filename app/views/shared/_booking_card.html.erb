@@ -27,10 +27,10 @@
 
         <div class="booking-upper-line">
           <% if booking.status == "pending" && @own_booking == false %>
-            <%= button_to([:user, booking], method: :patch, params: { currenbooking: { status: 'accepted' } }, class: "btn-clean mr-2", data: {confirm: "Are you sure you want to accept the booking request?" }) do %>
+            <%= button_to([:user, booking], method: :patch, params: { booking: { status: 'accepted' } }, class: "btn-clean mr-2", data: {confirm: "Are you sure you want to accept the booking request?" }) do %>
               <i class="fas fa-check-square icon-link icon-link-booking"></i>
             <% end %>
-            <%= button_to([:user, booking], method: :patch, params: { booking: { status: 'rejected' } }, class: "btn-clean", data: {confirm: "Are you sure you want to cancel the booking request?" }) do %>
+            <%= button_to([:user, booking], method: :patch, params: { booking: { status: 'cancelled' } }, class: "btn-clean", data: {confirm: "Are you sure you want to cancel the booking request?" }) do %>
               <i class="fas fa-window-close icon-link icon-link-booking"></i>
             <% end %>
           <% elsif booking.status == "pending" && @own_booking == true %>
