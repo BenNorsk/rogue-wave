@@ -1,9 +1,9 @@
-<div class="rw-second-background">
-  <%= render "shared/title_wave", element: "#{@user.first_name}'s Boats" %>
-  <div class="boats-container">
+<%= render "shared/title_wave", element: "#{@user.first_name}'s Boats" %>
+<div class="rw-background-all">
+  <div class="boats-container rw-background-all">
     <div class="row">
       <div class="col-6 py-0 all-boats">
-        <div class="user-boat-list">
+        <div class="user-boat-list mt-4">
           <% @user.boats.each do |boat| %>
             <% select = boat == @selected_boat ? "selected-card" : ""  %>
             <div class="user-boat-card position-relative <%= select %>">

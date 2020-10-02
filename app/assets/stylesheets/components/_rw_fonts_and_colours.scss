@@ -7,6 +7,10 @@ $rw-medium: #4E6059;
 $rw-light: #95A19D;
 $rw-highlight:#E67E22;
 
+.rw-background-all {
+  background: linear-gradient(rgb(160,180,200), rgb(255,255,255));
+}
+
 .rw-light-text {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
