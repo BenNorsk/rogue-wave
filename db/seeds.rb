@@ -8,8 +8,10 @@ User.destroy_all
 Address.destroy_all
 Boat.destroy_all
 
+# Config -> set to what you want to generate
 user_number = 10
 booking_number = 3
+image_number = 3
 
 
 puts "---> Generating #{user_number} fake users"
@@ -49,8 +51,8 @@ while (i < user_number)
       city: "Oslo",
       street_address: Faker::Address.street_address,
       country: "Norway",
-      lat: lat_range(59.74, 59.94),
-      long: long_range(10.46, 10.81)
+      latitude: lat_range(59.74, 59.94),
+      longitude: long_range(10.46, 10.81)
     )
 
     boat = Boat.create(
@@ -63,7 +65,7 @@ while (i < user_number)
 
     images_url = []
     k = 1
-    3.times do
+    image_number.times do
       images_url << 'https://source.unsplash.com/400x300/?' + "boat/#{k}"
       k += 1
     end
@@ -73,7 +75,7 @@ while (i < user_number)
       boat.photos.attach(io: file, filename: i.to_s, content_type: 'image/png')
     end
 
-    puts "Boat #{boat.name} created with 3 attached pictures"
+    puts "Boat #{boat.name} created with #{image_number} attached pictures"
   end
   i += 1
 end

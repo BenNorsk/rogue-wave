@@ -1,3 +1,28 @@
-<%= render 'shared/banner' %>
-
-
+<div class="banner">
+  <div class="logo-big">
+    <%= image_tag("banner.png", options = { class: "img-tag-banner"}) %>
+  </div>
+  <div class="container col-xs-6 col-md-6 col-lg-4 col-xl-4 search-div">
+    <%= simple_form_for("", method: :get, url: boats_path) do |f| %>
+      <div class="search-form-control form-group">
+        <%= f.input :query, label: false, :input_html => { :class => 'form-control' }, placeholder: 'Find your dream boat...' %>
+        <button name="button" type="submit" class="btn btn-flat" style="color: $rw-dark"><i class="fas fa-search"></i> Search</button>
+      </div>
+    <% end %>
+    <div class="quote">
+      <span id="banner-typed-text"></span>
+    </div>
+  </div>
+  <div class="rw-footer">
+    <div>
+      <p>like, subscribe, share...</p>
+    </div>
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>

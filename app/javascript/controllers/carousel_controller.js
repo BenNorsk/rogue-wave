@@ -1,6 +1,6 @@
 import { Controller } from "stimulus"
 
-console.log(">>> Hello from Stimulus Controller | carousel ")
+console.log(">>> Stimulus controller (Carousel) loaded");
 export default class extends Controller {
   static targets = [ "slide" ]
 
@@ -8,7 +8,7 @@ export default class extends Controller {
 
   // 1
   initialize() {
-    console.log(this.slideTargets)
+    // console.log(this.slideTargets)
     // sets the index slide visible in the DOM
     this.showCurrentSlide()
   }
@@ -44,12 +44,12 @@ export default class extends Controller {
   // this.index to be called => getting the index value from the DOM
   // & this.index = 2 => setting the value in the DOM.
   get index() {
-    console.log("...getting index");
+    // console.log("...getting index");
     return parseInt(this.data.get("index"))
   }
 
   set index(value) {
-    console.log("...setting index");
+    // console.log("...setting index");
     this.data.set("index", value)
     this.showCurrentSlide()
   }
