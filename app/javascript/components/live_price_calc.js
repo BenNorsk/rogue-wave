@@ -54,5 +54,5 @@ const calcPrice = () => {
 
 
 document.addEventListener('turbolinks:load', () => {
-  setInterval(calcPrice, 1000);
+  setInterval(() => calcPrice(), 1000);
 });
