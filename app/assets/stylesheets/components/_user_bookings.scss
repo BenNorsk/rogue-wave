@@ -131,6 +131,7 @@
 
 #my-bookings-tab:hover {
   color: white;
+  cursor: pointer;
 }
 
 
@@ -144,10 +145,19 @@
 
 #my-incoming-bookings-tab:hover {
   color: white;
+  cursor: pointer;
 }
 
 .rw-hidden {
   display:none;
+}
+
+.break-text {
+  text-align: center;
+}
+
+.rw-active-tab {
+  color: white !important;
 }
 
 
