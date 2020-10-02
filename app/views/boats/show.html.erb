@@ -27,7 +27,7 @@
         <div class="col ml-3">
           <div class="show-boat-title">
             <h2><%= @boat.name %></h2>
-            <h3 class="boat-price-lighter-weight">$ <span id="price-per-day">1564.57</span><small> / day</small></h3>
+            <h3 class="boat-price-lighter-weight">$ <span id="price-per-day"><%= @boat.price_per_day %></span><small> / day</small></h3>
           </div>
           <p><%= @boat.description %></p>
         </div>
