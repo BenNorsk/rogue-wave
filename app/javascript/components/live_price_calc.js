@@ -1,6 +1,6 @@
 console.log(">>> Live_price_calc.js loaded")
 
-pricePerDay = document.getElementById("price-per-day");
+
 const datePattern = /(?<startdate>\d{4}-\d{2}-\d{2}) to (?<enddate>\d{4}-\d{2}-\d{2})|(?<startenddate>\d{4}-\d{2}-\d{2})/;
 
 
@@ -14,15 +14,21 @@ const defined = (variable) => {
 }
 
 const calcPrice = () => {
+  // fixed value from page
+  pricePerDay = document.getElementById("price-per-day");
+
+  // User input
+  dateRangeInput = document.getElementById("date-range");
+
+  // Fields I will update
   totalPrice = document.getElementById("live-price-calc");
   daysElement = document.getElementById("live-days-calc");
-  dateRangeInput = document.getElementById("date-range");
   plural = document.getElementById("plural-days");
 
   let days = 0;
   let totalPriceValue = 0;
 
-  if (dateRangeInput === null ) { return}
+  if (dateRangeInput === null ) { return }
 
   if (dateRangeInput.value) {
     const matchValues = dateRangeInput.value.match(datePattern);
@@ -53,6 +59,10 @@ const calcPrice = () => {
 }
 
 
+
 document.addEventListener('turbolinks:load', () => {
+  // guard clause to prevent loading if not the show boat page
+  totalPrice = document.getElementById("live-price-calc");
+  if (totalPrice === null ) { return }
   setInterval(() => calcPrice(), 1000);
 });
