@@ -1,99 +1,12 @@
-/* Box Sizing */
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-.slide {
-  display: none;
-}
-
-.slide.slide--current {
-  display: block;
-}
-
-.boats-container {
-  min-height: 100vh;
-}
-
-.all-boats {
-  margin: 0 auto;
-}
-
-.user-boat-list {
+.user-boats-list {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
 }
 
-
-.user-boat-card {
-  border: 1px solid grey;
-  border-radius: 4px;
-  padding: 16px;
-  width: 100%;
-  background-image: image_url("white_bg.jpg");
-  transition: all .2s ease-in-out;
-
-  &:hover {
-    transform: scale(1.03);
-  }
-}
-
-.selected-card {
-  border: 3px solid grey;
-}
-.unselected-card {
-  opacity: 0.7;
-}
-
-.card-description-bl {
-  flex-grow: 1;
-}
-.card-options {
-  display: flex;
-  width: 40px;
-  justify-content: space-between;
-  align-items: flex-end;
-  z-index: 5;
-  a:hover{
-    color: $orange;
-  }
-}
-
-.user-boat-images {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
-
-.boat-image {
-  background-size: cover;
-  background-position: center;
-  height: 150px;
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-}
-
-@media(max-width: 1200px) {
-  .user-boat-images {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-@media(max-width: 992px) {
-  .user-boat-images {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media(max-width: 768px) {
-  .user-boat-images {
-    grid-template-columns: 1fr;
-  }
-}
-@media(max-width: 576px) {
-  .user-boat-images {
-    grid-template-columns: 1fr;
-  }
+.create-new-boat {
+  color: $rw-light;
+  font-size: 2rem;
+  font-family: $headers-font;
+  position: relative;
 }
