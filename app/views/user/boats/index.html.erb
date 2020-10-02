@@ -1,8 +1,8 @@
-<div class="container">
-  <%= render "shared/title_wave", element: "#{@user.first_name}'s Boats" %>
+<%= render "shared/title_wave", element: "#{@user.first_name}'s Boats" %>
+<div class="container mt-4">
   <div class="user-boats-list">
     <% @user.boats.each do |boat| %>
-        <%= render '/shared/card_boat_v2', { element: @user.boats.last, hide_actions: false } %>
+        <%= render '/shared/card_boat_v2', { element: boat, hide_actions: false } %>
     <% end %>
   </div>
 </div>

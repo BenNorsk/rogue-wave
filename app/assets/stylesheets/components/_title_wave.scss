@@ -1,6 +1,9 @@
 .water-bg {
   text-align: center;
   padding-top: 50px;
+  background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), asset_url("title_wave.jpg");
+  background-size: cover;
+  border-bottom: 8px solid  #24282B;
 }
 
 

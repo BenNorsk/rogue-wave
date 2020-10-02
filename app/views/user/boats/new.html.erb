@@ -1,12 +1,10 @@
+<%= render "shared/title_wave", element: "Register a new boat with us" %>
+<div class="container">
+  <div class="row justify-content-center">
 
+    <div class="col-9 col-lg-9">
 
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-12 d-flex justify-content-center">
-      <h1>Create a boat</h1>
-    </div>
-  </div>
-  <div class="col-12 d-flex justify-content-center">
+    <div class="create-form mt-3">
     <%= simple_form_for([:user, @boat]) do |f| %>
       <%= f.input :name %>
       <%= f.input :description %>
@@ -19,6 +17,8 @@
       <% end %>
       <%= f.submit %>
     <% end %>
+    </div>
+  </div>
   </div>
 </div>
 
