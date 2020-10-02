@@ -1,0 +1,19 @@
+const bookingsTab = () => {
+  const myBookingsTab = document.querySelector("#my-bookings-tab")
+  const myIncomingBookingsTab = document.querySelector("#my-incoming-bookings-tab")
+  const bookingCards = document.querySelector("#booking-cards")
+  const bookingCards2 = document.querySelector("#booking-cards2")
+
+  myBookingsTab.addEventListener("click", (event) => {
+    bookingCards.classList.remove("rw-hidden");
+    bookingCards2.classList.add("rw-hidden")
+  });
+
+  myIncomingBookingsTab.addEventListener("click", (event) => {
+    bookingCards2.classList.remove("rw-hidden");
+    bookingCards.classList.add("rw-hidden");
+  });
+
+}
+
+export { bookingsTab }

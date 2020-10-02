@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
     if check_booking_dates_validity(converted_dates)
       @booking = Booking.new(converted_dates)
       @booking.user = current_user
+      @booking.message = params["booking"]["message"]
       @booking.boat = Boat.find(params["boat_id"])
       @booking.status = "pending"
       if @booking.save

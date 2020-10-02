@@ -1,6 +1,10 @@
 class User::BookingsController < ApplicationController
   def index
     @bookings = Booking.where("user_id = #{current_user.id}")
+    @boat_bookings = []
+    current_user.boats.ids.each do |boat_id|
+      @boat_bookings << Booking.where("boat_id = #{boat_id}")
+    end
   end
 
   def update

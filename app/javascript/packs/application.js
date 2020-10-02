@@ -18,11 +18,19 @@ import '../plugins/typed_banner';
 import '../components/live_price_calc';
 
 
+
 //JS for Maps
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+})
+
+//Bookings Tabs
+import '../components/bookings_tab.js.erb'
+import { bookingsTab } from '../components/bookings_tab.js.erb'
+document.addEventListener('turbolinks:load', () => {
+  bookingsTab();
 })
 
 
