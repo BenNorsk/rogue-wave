@@ -2,8 +2,13 @@
 <div class="container mt-4">
   <div class="user-boats-list">
     <% @user.boats.each do |boat| %>
-        <%= render '/shared/card_boat_v2', { element: boat, hide_actions: false } %>
+      <%= render '/shared/card_boat_v2', { element: boat, hide_actions: false } %>
     <% end %>
+    <div class="boat-card-v2 d-flex justify-content-center align-items-center">
+      <%= link_to "", new_user_boat_path(current_user), class: "stretched-link" %>
+      <div class="create-new-boat">
+        <i class="fas fa-plus"></i>
+      </div>
+    </div>
   </div>
 </div>
-

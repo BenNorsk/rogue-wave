@@ -3,3 +3,10 @@
   grid-template-columns: 1fr;
   grid-gap: 16px;
 }
+
+.create-new-boat {
+  color: $rw-light;
+  font-size: 2rem;
+  font-family: $headers-font;
+  position: relative;
+}
