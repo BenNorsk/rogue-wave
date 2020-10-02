@@ -10,7 +10,8 @@ require("channels")
 import 'bootstrap';
 import 'dropzone';
 
-import "../plugins/flatpickr";
+import "../plugins/flatpickr"
+import '../plugins/init_autocomplete'
 
 // typed effect on banner
 import '../plugins/typed_banner';

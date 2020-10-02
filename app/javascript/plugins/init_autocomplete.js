@@ -1,15 +1,22 @@
-// import places from 'places.js';
+import places from 'places.js';
 
-// const initAutocomplete = () => {
-//   const addressInput = document.getElementById('flat_address');
-//   if (addressInput) {
-//     places({ container: addressInput });
-//   }
-// };
-
-// const map = new mapboxgl.Map({
-//   container: 'map',
-//   style: 'mapbox://styles/pdunleav/cjofefl7u3j3e2sp0ylex3cyb' // <-- use your own!
-// });
-
-// export { initAutocomplete };
+document.addEventListener('turbolinks:load', () => {
+(function() {
+  var placesAutocomplete = places({
+    appId: 'plT520BOCQY1',
+    apiKey: 'c9727f8316c766c44757111c62d86381',
+    container: document.querySelector('.street_address'),
+    templates: {
+      value: function(suggestion) {
+        return suggestion.name;
+      }
+    }
+  }).configure({
+    type: 'address'
+  });
+  placesAutocomplete.on('change', function resultSelected(e) {
+    document.querySelector('.city_address').value = e.suggestion.city || '';
+    document.querySelector('.country_address').value = e.suggestion.country || '';
+  });
+})();
+});
