@@ -15,10 +15,12 @@
 <div class="pt-4" id="booking-cards2">
   <h4 class="p-4 rw-light-text break-text">Here are all your incoming booking requests.</h4>
   <div class="all-booking-cards displayed">
+    <% if !@boat_bookings[0].nil? %>
     <% @boat_bookings[0].each do |booking| %>
       <div class="p-2">
         <%= render "shared/booking_card", element: booking %>
       </div>
+    <% end %>
     <% end %>
   </div>
 </div>
