@@ -1,6 +1,6 @@
 
 .logo-big {
-  width: 400px;
+  width: 300px;
   padding: 20px 0px;
   margin: 0 auto;
 }
@@ -51,7 +51,7 @@
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .quote {
-    width: 350px;
+    width: 250px;
   }
 }
 // Small devices (landscape phones, 576px and up)
@@ -71,13 +71,19 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .logo-big {
-    width: 500px;
+    width: 300px;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
     .logo-big {
-      width: 500px;
+      width: 300px;
+    }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-height: 1080px) {
+    .logo-big {
+      width: 400px;
     }
 }
